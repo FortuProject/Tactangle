@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bavmg22uuybh1"
+
+[deps]
+
+files=["res://MoveOptions.Chess Movement.translation", "res://MoveOptions.AOE.translation", "res://MoveOptions.Stamina Cost.translation", "res://MoveOptions.Posture Cost to Opponent.translation", "res://MoveOptions.Beats.translation", "res://MoveOptions.Loses To.translation", "res://MoveOptions.Notes.translation"]
+
+source_file="res://MoveOptions.csv"
+dest_files=["res://MoveOptions.Chess Movement.translation", "res://MoveOptions.AOE.translation", "res://MoveOptions.Stamina Cost.translation", "res://MoveOptions.Posture Cost to Opponent.translation", "res://MoveOptions.Beats.translation", "res://MoveOptions.Loses To.translation", "res://MoveOptions.Notes.translation"]
+
+[params]
+
+compress=true
+delimiter=0

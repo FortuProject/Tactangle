@@ -1,0 +1,28 @@
+Move,Chess Movement,AOE,Stamina Cost,Posture Cost to Opponent,Beats,Loses To,Notes
+Step,Wazir (1 orthogonal),1 cell,0,0,Grip,Everything else,"Pure repositioning. Low priority. Use for dodging, spacing."
+Shoot,Rook (straight lines),Line (3 cells max),2,4,"Throw, Step","Grip, Counter","Long-range pressure. High reward, punishable if read."
+Grip,Knight (L-shape),1 cell,1,1,"Shoot, Step","Throw, Grip Strip","Enables throws, medium risk, positional pressure."
+Kuzushi,Ferz (1-diagonal),1 cell,1,2,"Step, Grip",Throw,Shove; buffs your next throw (+2 posture damage).
+Throw,Alfil (2-diagonal),2 cells,3,6,"Grip, Kuzushi","Shoot, Counter",High damage finisher. Requires grip or kuzushi setup.
+Super Throw,Queen (any direction),2 cells,5,8,Everything except Counter,Counter,Only usable once per game/match. Midgame power spike.
+Defensive options ,Defensive options ,Defensive options ,Defensive options ,Defensive options ,Defensive options ,Defensive options ,Defensive options 
+Counter Stance,N/A (reaction move),1 cell (if triggered),2,Reverses incoming attack,"Super Throw, Throw",Comeback Throw,"Requires prediction. If guessed right, flips the opponent’s move back."
+Grip Strip,N/A (targeted dispel),1 cell,1,0,Grip,"Step, Throw",Removes grip from opponent. Setup breaker.
+Clinch,Wazir (1 orthogonal),1 cell,1,0,"Shoot, Step","Throw, Kuzushi","Resets both positions, good for defense."
+Stall,None,Self only,0,0 (recovers 2 stamina),Nothing,Everything,"No attack. Use only when low stamina, but vulnerable."
+Stand Straight,None,Self only,0,+4,Nothing,Everything,Posture-recovery stance. Regains balance. Leaves you vulnerable.
+Guard ,None,Self only,2,1,"Grip, Kusuzhi","Throw, shoot, super throw","Defensive guard, to break grips and block striking attacks. Loses to throws"
+Defensive 2 options ,,,,,,,
+Counter Stance,2 stamina,"Reverses Throw, Super Throw, and Shoot if timed","Throw, Shoot, Super Throw","Grip, Kuzushi, Guard",Mirror,"High-risk, high-reward. Only works if attack overlaps.",
+Grip Strip,1 stamina,Removes opponent’s Grip in AOE,Grip,"Shoot, Throw",Any adjacent,"Strong anti-grapple, limited range.",
+Clinch,1 stamina,"Forces tie-up, resets both positions to center","Step, Shoot","Throw, Grip Strip",Wazir (orthogonal),Used to stall or break pressure.,
+Stall,0 stamina,"Skip action, recover +2 stamina",—,"Grip, Throw",—,"Strategic resource gain, loses board control.",
+Stand Straight,1 posture,Regain +2 posture (mental/centering action),—,"Throw, Grip",—,Pure recovery. Encourages tight timing.,
+Guard,1 stamina,Block 1 damage from any AOE that hits,Weak AOEs,"Throws, Grip Strip",—,Passive defense. Better when predicting multi-AOE hits.,
+Offensive 2 options ,,,,,,,
+Step,0,Reposition freely,Grip,Everything else,King,Only wins if repositioning is key.,
+Shoot,2 stamina,"Linear AOE, 4 posture damage","Throw, Step","Counter, Grip",Rook,Long-range but vulnerable.,
+Grip,1 stamina,"Enables Throw, 1 posture damage","Shoot, Step","Throw, Strip",Knight,"Grapple setup, core to combo chains.",
+Kuzushi,1 stamina,"Boosts next Throw, 1 posture damage","Step, Grip",Throw,Ferz,"Support move, needs setup.",
+Throw,3 stamina,Finisher (if posture = 0),"Grip, Kuzushi","Shoot, Counter",Mini-Bishop,"High payoff, needs conditions.",
+Super Throw,4 stamina,"Finisher, 2x AOE, wins unless Countered",Everything,Counter,Queen,"Final move of momentum arc, rare.",
