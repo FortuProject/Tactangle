@@ -1,0 +1,496 @@
+[gd_scene load_steps=36 format=3 uid="uid://bywbicu0tc12n"]
+
+[ext_resource type="Texture2D" uid="uid://saq7bejnuy3y" path="res://assets/player/KungFuMan_blue_gi.png" id="1_hc00h"]
+[ext_resource type="Script" path="res://scripts/enemy_grappler.gd" id="1_lx6xg"]
+[ext_resource type="Script" path="res://scripts/StateMachine_AI/state_machine2.gd" id="3_cafeg"]
+[ext_resource type="Script" path="res://scripts/StateMachine_AI/EnemyIdle.gd" id="4_ph3oe"]
+[ext_resource type="Script" path="res://scripts/StateMachine/PlayerGrab.gd" id="8_f7crp"]
+[ext_resource type="Script" path="res://scripts/StateMachine/PlayerKuzushi.gd" id="9_edt3s"]
+[ext_resource type="Script" path="res://scripts/StateMachine/PlayerThrow.gd" id="10_7ex5d"]
+[ext_resource type="Script" path="res://scripts/StateMachine_AI/EnemyWalk_Dash.gd" id="10_e3pxg"]
+[ext_resource type="PackedScene" uid="uid://b82yimbxiflml" path="res://scenes/Hit_Particles.tscn" id="10_tes7p"]
+[ext_resource type="Script" path="res://scripts/StateMachine_AI/EnemyBow.gd" id="12_4ctai"]
+[ext_resource type="Script" path="res://scripts/StateMachine_AI/EnemyHit.gd" id="13_xet8d"]
+
+[sub_resource type="Animation" id="Animation_2th0x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_qcr8e"]
+resource_name = "bow"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [39, 40, 41, 42, 43, 44, 45, 44, 43, 42, 41, 40, 39]
+}
+
+[sub_resource type="Animation" id="Animation_nswp1"]
+resource_name = "counter_slap"
+length = 0.17
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [76, 77, 78, 79, 80]
+}
+
+[sub_resource type="Animation" id="Animation_coahs"]
+resource_name = "foot_sweep"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [81, 82, 83]
+}
+
+[sub_resource type="Animation" id="Animation_83i3l"]
+resource_name = "grab"
+length = 0.27
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [97, 98, 99, 100, 101, 102, 103, 104]
+}
+
+[sub_resource type="Animation" id="Animation_x3od0"]
+resource_name = "grabbed"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [46, 47, 48, 49, 50, 51]
+}
+
+[sub_resource type="Animation" id="Animation_w507a"]
+resource_name = "hit_animation"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [52, 53, 54, 55]
+}
+
+[sub_resource type="Animation" id="Animation_ditln"]
+resource_name = "idle"
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [116, 117, 118]
+}
+
+[sub_resource type="Animation" id="Animation_dheco"]
+resource_name = "kuzushi"
+length = 0.27
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [115, 116, 117, 118, 119, 120, 121, 122]
+}
+
+[sub_resource type="Animation" id="Animation_fh4fm"]
+resource_name = "run_forward"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [33, 34, 35, 36, 37, 38]
+}
+
+[sub_resource type="Animation" id="Animation_8ra6u"]
+resource_name = "stunned"
+length = 0.15
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [72, 73, 74, 75]
+}
+
+[sub_resource type="Animation" id="Animation_quxcb"]
+resource_name = "throw"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96]
+}
+
+[sub_resource type="Animation" id="Animation_rw7fh"]
+resource_name = "thrown"
+length = 0.34
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [56, 57, 58, 59, 60, 61, 62, 63, 64, 65]
+}
+
+[sub_resource type="Animation" id="Animation_23syp"]
+resource_name = "uppercut"
+length = 0.34
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [105, 106, 107, 108, 109, 110, 111, 112, 113, 114]
+}
+
+[sub_resource type="Animation" id="Animation_oj058"]
+resource_name = "walk_backward"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32]
+}
+
+[sub_resource type="Animation" id="Animation_w5vtn"]
+resource_name = "walk_forward"
+length = 0.55
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("YOMI_Grapple_Player:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6tjxk"]
+_data = {
+"RESET": SubResource("Animation_2th0x"),
+"bow": SubResource("Animation_qcr8e"),
+"counter_slap": SubResource("Animation_nswp1"),
+"foot_sweep": SubResource("Animation_coahs"),
+"grab": SubResource("Animation_83i3l"),
+"grabbed": SubResource("Animation_x3od0"),
+"hit_animation": SubResource("Animation_w507a"),
+"idle": SubResource("Animation_ditln"),
+"kuzushi": SubResource("Animation_dheco"),
+"run_forward": SubResource("Animation_fh4fm"),
+"stunned": SubResource("Animation_8ra6u"),
+"throw": SubResource("Animation_quxcb"),
+"thrown": SubResource("Animation_rw7fh"),
+"uppercut": SubResource("Animation_23syp"),
+"walk_backward": SubResource("Animation_oj058"),
+"walk_forward": SubResource("Animation_w5vtn")
+}
+
+[sub_resource type="GDScript" id="GDScript_o8pls"]
+script/source = "extends State
+class_name PlayerDown
+
+@export var Player: CharacterBody2D
+@export var AnimPlayer: AnimationPlayer
+@export var Hurtbox_1: CollisionShape2D
+@export var Hitbox_1: CollisionShape2D
+
+func Enter(): 
+	pass
+
+func Update(delta: float):
+	if InputParser.exported_move == \"DOWN\":
+			Transition(\"PlayerIdle\")
+			return
+	if InputParser.current_move_sequence.has(\"DOWN\"):
+			Transition(\"PlayerIdle\")
+			return  # early exit after first match
+
+
+func Transition(newstate : String):
+		state_transition.emit(self, newstate)
+"
+
+[sub_resource type="GDScript" id="GDScript_64c8s"]
+script/source = "extends State
+class_name PlayerCounter
+@export var Player: CharacterBody2D
+@export var AnimPlayer: AnimationPlayer
+@export var Hurtbox_1: CollisionShape2D
+
+@export var Hitbox_1: CollisionShape2D
+@export var SFX: AudioStreamPlayer 
+func throw_attempt_animation():      
+	AnimPlayer.play(\"counter_slap\")
+	await(2)
+
+func Enter(): 
+	SFX.stream = load(\"res://assets/audio/SFX/Move1.wav\")
+	SFX.play()
+	Player.position.x -= 20 #move backward 
+	#print(\"Grip attempt started.\")
+	throw_attempt_animation()
+
+func Update(delta: float):
+	
+	#if Input.is_action_just_pressed(\"GRAB\"):
+		#Transition(\"PlayerGrab\")
+	if Input.is_action_just_pressed(\"RIGHT_P2\"):
+		Transition(\"PlayerWalking_Dash\")
+	elif Input.is_action_just_pressed(\"LEFT_P2\"):
+		Transition(\"PlayerWalking_Dash\")
+	#if Input.is_action_just_pressed(\"DOWN\"):
+		#Transition(\"PlayerDown\")
+	#elif Input.is_action_just_pressed(\"GRAB\"):
+		#Transition(\"PlayerGrab\")
+	#elif Input.is_action_just_pressed(\"KUZUSHI\"):
+		#Transition(\"PlayerKuzushi\")
+	#elif Input.is_action_just_pressed(\"THROW\"):
+		#Transition(\"PlayerThrow\")
+	elif Input.is_action_just_pressed(\"COUNTER_P2\"):
+		Transition(\"PlayerCounter\")
+	pass
+	
+
+func Transition(newstate : String):
+		state_transition.emit(self, newstate)
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wywfy"]
+radius = 40.0
+height = 148.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_divcj"]
+radius = 27.0
+height = 266.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ospl"]
+radius = 40.05
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onjjq"]
+radius = 28.0
+height = 132.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4wf3"]
+size = Vector2(95, 241.5)
+
+[node name="EnemyGrappler" type="CharacterBody2D" groups=["Player2"]]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_lx6xg")
+
+[node name="YOMI_Grapple_Player" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(257, 317)
+scale = Vector2(2, 2.333)
+texture = ExtResource("1_hc00h")
+flip_h = true
+hframes = 13
+vframes = 12
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_6tjxk")
+}
+
+[node name="StateMachine2" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_cafeg")
+initial_state = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer")]
+script = ExtResource("4_ph3oe")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+
+[node name="EnemyDown" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer")]
+script = SubResource("GDScript_o8pls")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+
+[node name="EnemyGrab" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer")]
+script = ExtResource("8_f7crp")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+
+[node name="EnemyKuzushi" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer")]
+script = ExtResource("9_edt3s")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+
+[node name="EnemyThrow" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer")]
+script = ExtResource("10_7ex5d")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+
+[node name="EnemyCounter" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer", "Hurtbox_1", "Hitbox_1")]
+script = SubResource("GDScript_64c8s")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+Hurtbox_1 = NodePath("../../Collision")
+Hitbox_1 = NodePath("../../Hitbox/Grabs")
+
+[node name="EnemyBow" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer")]
+script = ExtResource("12_4ctai")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+
+[node name="EnemyHit" type="Node" parent="StateMachine2" node_paths=PackedStringArray("Player", "AnimPlayer", "Hurtbox_1", "Hurtbox_2", "Hurtbox_3", "Hitbox_1")]
+script = ExtResource("13_xet8d")
+Player = NodePath("../..")
+AnimPlayer = NodePath("../../AnimationPlayer")
+Hurtbox_1 = NodePath("../../Hurtbox/Body")
+Hurtbox_2 = NodePath("../../Hurtbox/Arms")
+Hurtbox_3 = NodePath("../../Hurtbox/Head")
+Hitbox_1 = NodePath("../../Hitbox/Grabs")
+
+[node name="PlayerWalking_Dash" type="Node" parent="StateMachine2" node_paths=PackedStringArray("AnimPlayer", "AudioManager", "player", "state_machine")]
+script = ExtResource("10_e3pxg")
+AnimPlayer = NodePath("../../AnimationPlayer")
+AudioManager = NodePath("../../SFX")
+player = NodePath("../..")
+state_machine = NodePath("..")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(405, 292)
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Body" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(257, 368)
+shape = SubResource("CapsuleShape2D_wywfy")
+
+[node name="Arms" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(189, 349)
+shape = SubResource("CapsuleShape2D_divcj")
+
+[node name="Head" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(252, 259)
+shape = SubResource("CircleShape2D_7ospl")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Player2"]]
+
+[node name="Grabs" type="CollisionShape2D" parent="Hitbox" groups=["Player2"]]
+position = Vector2(135, 302)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_onjjq")
+disabled = true
+
+[node name="Collision" type="CollisionShape2D" parent="." groups=["Player2"]]
+position = Vector2(258.5, 339.75)
+shape = SubResource("RectangleShape2D_o4wf3")
+
+[node name="HitParticles" parent="." instance=ExtResource("10_tes7p")]
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+
+[connection signal="area_shape_entered" from="Hurtbox" to="StateMachine2/EnemyIdle" method="_on_hurtbox_area_shape_entered"]
+[connection signal="area_shape_entered" from="Hitbox" to="StateMachine2/EnemyIdle" method="_on_hitbox_area_shape_entered"]

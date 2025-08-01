@@ -1,0 +1,391 @@
+[gd_scene load_steps=12 format=3 uid="uid://bf6khdcdlc0o8"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_hs6ev"]
+[ext_resource type="Texture2D" uid="uid://c7id5y7akpmo4" path="res://assets/UI/SwitchPlayerButton.png" id="3_fn5ck"]
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="4_xevdt"]
+[ext_resource type="Texture2D" uid="uid://b1b40lksvucb6" path="res://assets/UI/Stamina_YOMI_Grapple.png" id="5_1au86"]
+[ext_resource type="FontFile" uid="uid://bomhu4wdv3018" path="res://assets/fonts/Germanica.ttf" id="6_fkhyd"]
+[ext_resource type="Texture2D" uid="uid://djieah5vq4wmf" path="res://assets/UI/Pieces_2.png" id="7_26kch"]
+[ext_resource type="Texture2D" uid="uid://ch4renmu2qopc" path="res://assets/UI/Super_YOMI_Grapple.png" id="9_vufdm"]
+[ext_resource type="Texture2D" uid="uid://wvg83g4wojj8" path="res://assets/UI/Board/Blue_Arrows.png" id="12_ou88e"]
+[ext_resource type="Texture2D" uid="uid://bxggqllxn38vu" path="res://assets/UI/Board/Red_Buttons.png" id="13_3bh0h"]
+[ext_resource type="Texture2D" uid="uid://dxmaxw7lumib1" path="res://assets/UI/Board/Blue_Buttons.png" id="13_ff68t"]
+[ext_resource type="Texture2D" uid="uid://b0v5kg1ijthwm" path="res://assets/UI/Board/Red_Arrows.png" id="14_oxsvk"]
+
+[node name="UI" type="Node2D"]
+script = ExtResource("1_hs6ev")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="PlayerName_box" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(80, 27)
+scale = Vector2(2.5, 1.58598)
+texture = ExtResource("3_fn5ck")
+hframes = 2
+
+[node name="PlayerName" type="Label" parent="UI"]
+offset_left = 9.0
+offset_top = 4.75138
+offset_right = 129.0
+offset_bottom = 45.7514
+theme_override_fonts/font = ExtResource("4_xevdt")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MeterBox_Player" type="Sprite2D" parent="UI"]
+position = Vector2(225, 544)
+scale = Vector2(1.94706, 1.24378)
+texture = ExtResource("5_1au86")
+hframes = 9
+vframes = 8
+
+[node name="MeterLabel_Player" type="Label" parent="UI"]
+offset_top = 481.0
+offset_right = 93.0
+offset_bottom = 581.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("6_fkhyd")
+theme_override_font_sizes/font_size = 100
+text = "3
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MeterBox_Enemy" type="Sprite2D" parent="UI"]
+position = Vector2(580, 543)
+scale = Vector2(2.08008, 1.32835)
+texture = ExtResource("9_vufdm")
+hframes = 9
+vframes = 8
+
+[node name="MeterLabel_Enemy" type="Label" parent="UI"]
+offset_left = 713.0
+offset_top = 481.0
+offset_right = 794.0
+offset_bottom = 581.0
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("6_fkhyd")
+theme_override_font_sizes/font_size = 100
+text = "3
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Enemy_Name_box" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(713, 26)
+scale = Vector2(2.5, 1.58598)
+texture = ExtResource("3_fn5ck")
+hframes = 2
+frame = 1
+
+[node name="EnemyName" type="Label" parent="UI"]
+offset_left = 645.0
+offset_top = 4.37568
+offset_right = 773.0
+offset_bottom = 45.3757
+theme_override_fonts/font = ExtResource("4_xevdt")
+theme_override_font_sizes/font_size = 30
+text = "Player2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Piece1_Sprite" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(245, 40)
+scale = Vector2(5, 5)
+texture = ExtResource("7_26kch")
+hframes = 15
+vframes = 4
+
+[node name="Piece2_Sprite" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(403, 39)
+scale = Vector2(5, 5)
+texture = ExtResource("7_26kch")
+hframes = 15
+vframes = 4
+frame = 15
+
+[node name="Piece3_Sprite" type="Sprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(561, 40)
+scale = Vector2(5, 5)
+texture = ExtResource("7_26kch")
+hframes = 15
+vframes = 4
+frame = 30
+
+[node name="Piece1_Label" type="Label" parent="UI"]
+anchors_preset = -1
+anchor_left = -0.0488722
+anchor_top = 0.0260417
+anchor_right = -0.0488722
+anchor_bottom = 0.0260417
+offset_left = 223.0
+offset_top = 47.0
+offset_right = 346.0
+offset_bottom = 105.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_xevdt")
+theme_override_font_sizes/font_size = 25
+text = "gRIP"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Piece2_Label" type="Label" parent="UI"]
+offset_left = 350.0
+offset_top = 62.0
+offset_right = 473.0
+offset_bottom = 120.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_xevdt")
+theme_override_font_sizes/font_size = 25
+text = "kUZUSHI"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Piece3_Label" type="Label" parent="UI"]
+offset_left = 503.0
+offset_top = 62.0
+offset_right = 626.0
+offset_bottom = 120.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("4_xevdt")
+theme_override_font_sizes/font_size = 25
+text = "tHROW"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MoveHistoryEnemy" type="Node" parent="UI"]
+
+[node name="Label" type="Label" parent="UI/MoveHistoryEnemy"]
+offset_left = 601.0
+offset_top = 80.0
+offset_right = 798.0
+offset_bottom = 168.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_xevdt")
+theme_override_font_sizes/font_size = 10
+text = "Nothing"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="1st" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(661, 230)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ff68t")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="2nd" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(714, 228)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ff68t")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="3rd" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(769, 230)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ff68t")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="4th" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(662, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ff68t")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="5th" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(714, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ff68t")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="6th" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(769, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("13_ff68t")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="1st2" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(694, 441)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ou88e")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="2nd2" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(770, 443)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ou88e")
+flip_h = true
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="3rd2" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(728, 403)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("12_ou88e")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="4th2" type="Sprite2D" parent="UI/MoveHistoryEnemy"]
+texture_filter = 1
+position = Vector2(730, 443)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("12_ou88e")
+flip_h = true
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="MoveHistoryPlayer" type="Node" parent="UI"]
+
+[node name="Label" type="Label" parent="UI/MoveHistoryPlayer"]
+offset_left = 9.0
+offset_top = 80.0
+offset_right = 206.0
+offset_bottom = 168.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("4_xevdt")
+theme_override_font_sizes/font_size = 10
+text = "Nothing"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="1st" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(25, 230)
+scale = Vector2(2, 2)
+texture = ExtResource("13_3bh0h")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="2nd" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(78, 228)
+scale = Vector2(2, 2)
+texture = ExtResource("13_3bh0h")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="3rd" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(133, 230)
+scale = Vector2(2, 2)
+texture = ExtResource("13_3bh0h")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="4th" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(26, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("13_3bh0h")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="5th" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(78, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("13_3bh0h")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="6th" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(133, 184)
+scale = Vector2(2, 2)
+texture = ExtResource("13_3bh0h")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="1st2" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(37, 441)
+scale = Vector2(2, 2)
+texture = ExtResource("14_oxsvk")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="2nd2" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(113, 443)
+scale = Vector2(2, 2)
+texture = ExtResource("14_oxsvk")
+flip_h = true
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="3rd2" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(71, 403)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("14_oxsvk")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="4th2" type="Sprite2D" parent="UI/MoveHistoryPlayer"]
+texture_filter = 1
+position = Vector2(73, 443)
+rotation = 1.5708
+scale = Vector2(2, 2)
+texture = ExtResource("14_oxsvk")
+flip_h = true
+hframes = 2
+vframes = 2
+frame = 1

@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvmqudw447fmb"]
+
+[ext_resource type="Script" path="res://scripts/Pre_Post_Game/settings.gd" id="1_u2inu"]
+[ext_resource type="Texture2D" uid="uid://bq7sqmbc3tels" path="res://ChatGPT Image Jul 14, 2025, 01_55_08 PM.png" id="4_43muu"]
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="5_3o3pc"]
+[ext_resource type="Texture2D" uid="uid://b7gdna116wm54" path="res://assets/backgrounds/Olympic_Judo_Background_Button.png" id="6_3ke2u"]
+[ext_resource type="AudioStream" uid="uid://b3jqdp734jphx" path="res://assets/audio/LukHash - Chiptune Ride.mp3" id="6_o80ij"]
+[ext_resource type="Texture2D" uid="uid://do45nnhswlnfc" path="res://assets/UI/pointer.png" id="7_k8do8"]
+
+[node name="SettingsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u2inu")
+
+[node name="Background_MainMenu" type="Sprite2D" parent="."]
+position = Vector2(399.5, 288)
+scale = Vector2(0.780273, 0.5625)
+texture = ExtResource("4_43muu")
+
+[node name="MAIN_MENU" type="Node" parent="."]
+
+[node name="CONTROLS_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 60.0
+offset_top = 151.0
+offset_right = 252.0
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_3o3pc")
+theme_override_font_sizes/font_size = 40
+text = "CONTROLS	"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AUDIO_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 62.0
+offset_top = 248.0
+offset_right = 254.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_3o3pc")
+theme_override_font_sizes/font_size = 40
+text = "AUDIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="GAMEPLAY_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 63.0
+offset_top = 346.0
+offset_right = 255.0
+offset_bottom = 446.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_3o3pc")
+theme_override_font_sizes/font_size = 40
+text = "GAMEPLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BACK_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 97.0
+offset_top = 443.0
+offset_right = 289.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_3o3pc")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="CONTROLS" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(148, 203)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_3ke2u")
+
+[node name="AUDIO" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(154, 301)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_3ke2u")
+
+[node name="GAMEPLAY" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(193, 497)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_3ke2u")
+
+[node name="BACK" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(158, 400)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_3ke2u")
+
+[node name="Pointer" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(340, 493)
+scale = Vector2(2.5625, 4.25)
+texture = ExtResource("7_k8do8")
+
+[node name="SongPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_o80ij")
+autoplay = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]

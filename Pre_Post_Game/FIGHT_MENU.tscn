@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://iqldx6s41tji"]
+
+[ext_resource type="Script" path="res://scripts/Pre_Post_Game/FIGHT_MENU.gd" id="1_87ud0"]
+[ext_resource type="Texture2D" uid="uid://kpnttv5dtm16" path="res://assets/backgrounds/Olympic_Judo_Background.png" id="2_e64lo"]
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="5_fwap3"]
+[ext_resource type="Texture2D" uid="uid://b7gdna116wm54" path="res://assets/backgrounds/Olympic_Judo_Background_Button.png" id="6_rf4gy"]
+[ext_resource type="AudioStream" uid="uid://djfj5wrn14m1" path="res://assets/audio/LukHash - Power Up.mp3" id="6_rnhpf"]
+[ext_resource type="Texture2D" uid="uid://do45nnhswlnfc" path="res://assets/UI/pointer.png" id="7_j13i2"]
+
+[node name="FightMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_87ud0")
+
+[node name="Background_MainMenu3" type="Sprite2D" parent="."]
+position = Vector2(399, 287)
+scale = Vector2(0.519531, 0.560547)
+texture = ExtResource("2_e64lo")
+
+[node name="MAIN_MENU" type="Node" parent="."]
+
+[node name="VERSUS_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 60.0
+offset_top = 151.0
+offset_right = 252.0
+offset_bottom = 251.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_fwap3")
+theme_override_font_sizes/font_size = 50
+text = "VERSUS"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="ARCADE_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 62.0
+offset_top = 248.0
+offset_right = 254.0
+offset_bottom = 348.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_fwap3")
+theme_override_font_sizes/font_size = 40
+text = "ARCADE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="TOURNAMENT_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 63.0
+offset_top = 346.0
+offset_right = 255.0
+offset_bottom = 446.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_fwap3")
+theme_override_font_sizes/font_size = 30
+text = "TOURNAMENT"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="BACK_LABEL" type="Label" parent="MAIN_MENU"]
+z_index = 1
+offset_left = 97.0
+offset_top = 443.0
+offset_right = 289.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 25
+theme_override_fonts/font = ExtResource("5_fwap3")
+theme_override_font_sizes/font_size = 40
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="VERSUS" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(148, 203)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_rf4gy")
+
+[node name="ARCADE" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(154, 301)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_rf4gy")
+
+[node name="TOURNAMENT" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(193, 497)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_rf4gy")
+
+[node name="BACK" type="Sprite2D" parent="MAIN_MENU"]
+texture_filter = 1
+position = Vector2(158, 400)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("6_rf4gy")
+
+[node name="Pointer" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(340, 493)
+scale = Vector2(2.5625, 4.25)
+texture = ExtResource("7_j13i2")
+
+[node name="SongPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rnhpf")
+volume_db = -15.0
+autoplay = true
+
+[node name="SFX" type="AudioStreamPlayer" parent="."]

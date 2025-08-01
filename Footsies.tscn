@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://cx01wfgmyhqhy"]
+
+[ext_resource type="Texture2D" uid="uid://ob2n33w2nuho" path="res://assets/backgrounds/Screenshot 2025-07-17 100717.jpg" id="2_qqb22"]
+[ext_resource type="PackedScene" uid="uid://bf6khdcdlc0o8" path="res://scenes/UI.tscn" id="6_67a2o"]
+[ext_resource type="AudioStream" uid="uid://bnioxitgdcdej" path="res://assets/audio/LukHash - 199X.mp3" id="6_ye65u"]
+[ext_resource type="PackedScene" uid="uid://bywbicu0tc12n" path="res://scenes/enemy_grappler.tscn" id="15_n27yt"]
+[ext_resource type="PackedScene" uid="uid://cbyoa12xtkjru" path="res://scenes/player_grappler.tscn" id="16_rwgqn"]
+[ext_resource type="Texture2D" uid="uid://cyaqyfwgrtyb4" path="res://assets/UI/Board/Floor_2.png" id="18_me04g"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8jl6b"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_g3uq0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_la6jg"]
+size = Vector2(130, 600.5)
+
+[node name="Node2D" type="Node2D"]
+metadata/_edit_horizontal_guides_ = [203.0]
+
+[node name="Background_Black" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_left = -821.0
+offset_top = -1.0
+offset_right = 821.0
+offset_bottom = 577.0
+texture = SubResource("CanvasTexture_8jl6b")
+expand_mode = 1
+
+[node name="Background_Sprite" type="Sprite2D" parent="."]
+position = Vector2(-8.10623e-05, 240.248)
+scale = Vector2(2.69622, 1.17699)
+texture = ExtResource("2_qqb22")
+
+[node name="Floor_Markers" type="Node" parent="."]
+
+[node name="Ground_Player" type="Sprite2D" parent="Floor_Markers"]
+texture_filter = 1
+position = Vector2(-460, 478)
+scale = Vector2(11.2734, 9.43608)
+texture = ExtResource("18_me04g")
+hframes = 2
+vframes = 4
+frame = 6
+
+[node name="Ground_Enemy" type="Sprite2D" parent="Floor_Markers"]
+texture_filter = 1
+position = Vector2(460, 478)
+scale = Vector2(11.2734, 9.43608)
+texture = ExtResource("18_me04g")
+flip_h = true
+hframes = 2
+vframes = 4
+frame = 6
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_g3uq0")
+
+[node name="PlayerGrappler" parent="." instance=ExtResource("16_rwgqn")]
+position = Vector2(-398, -1)
+
+[node name="Node2D" parent="." instance=ExtResource("6_67a2o")]
+position = Vector2(11, 317)
+
+[node name="PlayerGrappler2" parent="." instance=ExtResource("15_n27yt")]
+position = Vector2(-108, -6)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ye65u")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
+
+[node name="RIGHTWALL" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="RIGHTWALL_RECTANGLE" type="CollisionShape2D" parent="RIGHTWALL"]
+position = Vector2(865, 273.75)
+shape = SubResource("RectangleShape2D_la6jg")
+
+[node name="LEFTWALL" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="LEFTWALL_RECTANGLE" type="CollisionShape2D" parent="LEFTWALL"]
+position = Vector2(-872, 273.75)
+shape = SubResource("RectangleShape2D_la6jg")

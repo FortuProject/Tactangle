@@ -1,0 +1,664 @@
+[gd_scene load_steps=22 format=3 uid="uid://dx5m6vysbygky"]
+
+[ext_resource type="Script" path="res://scripts/YOMI_Grapple.gd" id="1_nr338"]
+[ext_resource type="Texture2D" uid="uid://dxne8koyo8tu4" path="res://assets/UI/Board/5x5BoardBackground1.png" id="2_eagwk"]
+[ext_resource type="Texture2D" uid="uid://b3565j736bupb" path="res://assets/UI/HP_YOMI_Grapple.png" id="3_qyyte"]
+[ext_resource type="Texture2D" uid="uid://cio6avdiydaxa" path="res://assets/UI/Board/Mat5x5_3.png" id="3_v2vxf"]
+[ext_resource type="Texture2D" uid="uid://ck8467lpaxmhr" path="res://assets/UI/Board/5x5_mat6.png" id="4_285um"]
+[ext_resource type="Texture2D" uid="uid://b1b40lksvucb6" path="res://assets/UI/Stamina_YOMI_Grapple.png" id="4_w50f5"]
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="5_xm04y"]
+[ext_resource type="Texture2D" uid="uid://ohrmeyprf2tq" path="res://assets/player/Grips_White_Gi.png" id="7_mldhm"]
+[ext_resource type="Texture2D" uid="uid://d1gdnooa4wbh" path="res://assets/player/Grips_White_Gi_Pants.png" id="8_3fylt"]
+[ext_resource type="Texture2D" uid="uid://bp4tmb5igdct" path="res://assets/player/KungFuMan_red_gi.png" id="10_tx6mv"]
+[ext_resource type="Texture2D" uid="uid://qmp6wqhv3h4o" path="res://assets/player/Grips_Blue_Gi.png" id="10_v70ag"]
+[ext_resource type="Texture2D" uid="uid://saq7bejnuy3y" path="res://assets/player/KungFuMan_blue_gi.png" id="11_au2pd"]
+[ext_resource type="Texture2D" uid="uid://dglm1r0fr8sbg" path="res://assets/UI/FullPosture_animation.png" id="11_c8oyj"]
+[ext_resource type="Texture2D" uid="uid://da64mj36a2732" path="res://assets/UI/FullHP_animation.png" id="12_a8kqc"]
+[ext_resource type="Texture2D" uid="uid://bwesdfnnh6ray" path="res://assets/player/Grips_Blue_Gi_Pants.png" id="12_f6pp0"]
+[ext_resource type="Texture2D" uid="uid://cyaqyfwgrtyb4" path="res://assets/UI/Board/Floor_2.png" id="14_aecru"]
+[ext_resource type="Texture2D" uid="uid://c7id5y7akpmo4" path="res://assets/UI/SwitchPlayerButton.png" id="17_aiwst"]
+[ext_resource type="Texture2D" uid="uid://bavp2nho30bh" path="res://assets/UI/GBA.png" id="20_br6y0"]
+[ext_resource type="Texture2D" uid="uid://dlg8gpe3pviek" path="res://assets/Roshi_front_back4.png" id="20_c1bsp"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_r0py5"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_g3uq0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nr338")
+metadata/_edit_horizontal_guides_ = [203.0]
+
+[node name="Board" type="Node" parent="."]
+
+[node name="Board_Background" type="Sprite2D" parent="Board"]
+visible = false
+position = Vector2(458.6, 1031.4)
+scale = Vector2(6, 6)
+texture = ExtResource("2_eagwk")
+
+[node name="1_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(266.4, 729.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+frame = 3
+
+[node name="1_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(362.6, 729.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="1_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(457.6, 729.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="1_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(553.6, 729.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="1_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(650.6, 729.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="2_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(266.4, 828.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="2_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(362.6, 828.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="2_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(457.6, 828.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="2_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(553.6, 828.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="2_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(650.6, 828.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="3_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(266.4, 924.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="3_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(362.6, 924.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="3_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(457.6, 924.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="3_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(553.6, 924.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="3_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(650.6, 924.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="4_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(266.4, 1020.42)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="4_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(362.6, 1020.42)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="4_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(457.6, 1020.42)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="4_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(553.6, 1020.42)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="4_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(650.6, 1020.42)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="5_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(266.4, 1116.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="5_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(362.6, 1116.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="5_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(457.6, 1116.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="5_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(553.6, 1116.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="5_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(650.6, 1116.4)
+scale = Vector2(6, 6)
+texture = ExtResource("3_v2vxf")
+hframes = 4
+vframes = 4
+
+[node name="Board_Lines" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(458.6, 921.4)
+scale = Vector2(6, 6)
+texture = ExtResource("4_285um")
+flip_h = true
+
+[node name="BoardButtons" type="Node" parent="."]
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_top = -1.0
+offset_right = 900.0
+offset_bottom = 2041.0
+texture = SubResource("Texture2DRD_r0py5")
+expand_mode = 1
+
+[node name="Now Fighting" type="Sprite2D" parent="Background"]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(740.991, 1110.96)
+scale = Vector2(2.01379, 2.17108)
+texture = ExtResource("20_c1bsp")
+
+[node name="TurnCounter" type="Label" parent="."]
+offset_left = 601.0
+offset_top = 246.0
+offset_right = 929.0
+offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Turn Counter: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNode" type="Node" parent="."]
+
+[node name="PlayerStamina_Whiteout" type="TextureRect" parent="PlayerNode"]
+offset_left = 37.0
+offset_top = 80.0
+offset_right = 439.0
+offset_bottom = 140.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="PlayerStamina" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(240, 111)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qyyte")
+hframes = 9
+vframes = 8
+
+[node name="PlayerPosture_Whiteout2" type="TextureRect" parent="PlayerNode"]
+offset_left = 37.0
+offset_top = 178.0
+offset_right = 439.0
+offset_bottom = 238.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="PlayerPosture" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(240, 208)
+scale = Vector2(3, 3)
+texture = ExtResource("4_w50f5")
+hframes = 9
+vframes = 8
+
+[node name="Grips_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(160, 421)
+scale = Vector2(4, 3)
+texture = ExtResource("7_mldhm")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(162, 575)
+scale = Vector2(2, 3)
+texture = ExtResource("8_3fylt")
+hframes = 3
+vframes = 3
+
+[node name="YOMI_Grapple_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(272, 1330.5)
+scale = Vector2(2.571, 3)
+texture = ExtResource("10_tx6mv")
+hframes = 12
+vframes = 11
+
+[node name="StaminaFull" type="Sprite2D" parent="PlayerNode"]
+visible = false
+texture_filter = 1
+position = Vector2(239.5, 110)
+scale = Vector2(3.00781, 3.125)
+texture = ExtResource("11_c8oyj")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="PostureFull" type="Sprite2D" parent="PlayerNode"]
+visible = false
+texture_filter = 1
+position = Vector2(240, 208)
+scale = Vector2(3, 3.125)
+texture = ExtResource("12_a8kqc")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="EnemyNode" type="Node" parent="."]
+
+[node name="EnemyStamina_Whiteout" type="TextureRect" parent="EnemyNode"]
+offset_left = 467.0
+offset_top = 80.0
+offset_right = 869.0
+offset_bottom = 140.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="EnemyStamina" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670, 110)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qyyte")
+flip_h = true
+hframes = 9
+vframes = 8
+
+[node name="EnemyPosture_Whiteout2" type="TextureRect" parent="EnemyNode"]
+offset_left = 469.0
+offset_top = 178.0
+offset_right = 871.0
+offset_bottom = 238.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="EnemyPosture" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670, 208)
+scale = Vector2(3, 3)
+texture = ExtResource("4_w50f5")
+flip_h = true
+hframes = 9
+vframes = 8
+
+[node name="YOMI_Grapple_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(619, 1335.5)
+scale = Vector2(2.647, 3)
+texture = ExtResource("11_au2pd")
+flip_h = true
+hframes = 12
+vframes = 11
+
+[node name="Grips_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(750, 411)
+scale = Vector2(4, 3)
+texture = ExtResource("10_v70ag")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(752, 565)
+scale = Vector2(2, 3)
+texture = ExtResource("12_f6pp0")
+hframes = 3
+vframes = 3
+
+[node name="PostureLabel" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 138.0
+offset_right = 527.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Posture"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaLabel" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 36.0
+offset_right = 519.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Stamina"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ground" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(540, 1542.5)
+scale = Vector2(10.6251, 10.6251)
+texture = ExtResource("14_aecru")
+vframes = 4
+frame = 3
+
+[node name="PlayerName_box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(96, 38.6243)
+scale = Vector2(2.5, 1.58598)
+texture = ExtResource("17_aiwst")
+hframes = 2
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 17.0
+offset_right = 153.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName_box2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(808, 37)
+scale = Vector2(2.5, 1.58598)
+texture = ExtResource("17_aiwst")
+hframes = 2
+frame = 1
+
+[node name="EnemyName" type="Label" parent="."]
+offset_left = 745.0
+offset_top = 17.0
+offset_right = 873.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Player2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Type_Move_Box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(465, 508)
+scale = Vector2(4.1875, 3.35946)
+texture = ExtResource("17_aiwst")
+hframes = 2
+
+[node name="Type_Move_Label" type="Label" parent="."]
+offset_left = 338.0
+offset_top = 461.0
+offset_right = 593.0
+offset_bottom = 555.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Move"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SwitchPlayer_Box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(472, 311)
+scale = Vector2(4.1875, 3.35946)
+texture = ExtResource("17_aiwst")
+hframes = 2
+
+[node name="SwitchPlayer_Button" type="Button" parent="."]
+offset_left = 312.0
+offset_top = 249.0
+offset_right = 645.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Switch player 
+Selector"
+flat = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_g3uq0")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.4
+offset_top = 0.999992
+offset_right = 178.6
+offset_bottom = 399.0
+scale = Vector2(5, 5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(90.68, 351.8)
+scale = Vector2(1.18275, 0.9805)
+texture = ExtResource("20_br6y0")
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="Up" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0722222
+anchor_top = 0.0226131
+anchor_right = 0.127778
+anchor_bottom = 0.0477387
+offset_left = 16.0
+offset_top = 320.0
+offset_right = 34.0
+offset_bottom = 337.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Down" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0666667
+anchor_top = 0.0678392
+anchor_right = 0.116667
+anchor_bottom = 0.0929648
+offset_left = 17.0
+offset_top = 346.0
+offset_right = 35.0
+offset_bottom = 363.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123778
+anchor_top = 0.0452261
+anchor_right = 0.162667
+anchor_bottom = 0.0653266
+offset_left = 34.0
+offset_top = 334.0
+offset_right = 52.0
+offset_bottom = 351.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0193333
+anchor_top = 0.0477387
+anchor_right = 0.0526666
+anchor_bottom = 0.0653266
+offset_left = 1.0
+offset_top = 333.0
+offset_right = 19.0
+offset_bottom = 350.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Zwei" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00555556
+anchor_top = 0.00753769
+anchor_bottom = 0.0150754
+offset_left = 96.0
+offset_top = 354.0
+offset_right = 118.0
+offset_bottom = 375.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Eins" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0217778
+anchor_top = -0.00251264
+anchor_right = 0.0115556
+anchor_bottom = 0.0276381
+offset_left = 124.0
+offset_top = 333.0
+offset_right = 146.0
+offset_bottom = 354.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Walen" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00555556
+anchor_top = 0.00753769
+anchor_right = 0.0222222
+anchor_bottom = 0.0150754
+offset_left = 63.0
+offset_top = 321.0
+offset_right = 94.0
+offset_bottom = 334.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="SwitchPlayer_Button" to="." method="_on_switch_player_button_pressed"]
+[connection signal="button_down" from="Control/Up" to="." method="_on_up_button_down"]
+[connection signal="button_up" from="Control/Up" to="." method="_on_up_button_up"]
+[connection signal="pressed" from="Control/Up" to="." method="_on_up_pressed"]
+[connection signal="button_down" from="Control/Down" to="." method="_on_down_button_down"]
+[connection signal="button_up" from="Control/Down" to="." method="_on_down_button_up"]
+[connection signal="pressed" from="Control/Down" to="." method="_on_down_pressed"]
+[connection signal="button_down" from="Control/Right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="Control/Right" to="." method="_on_right_button_up"]
+[connection signal="pressed" from="Control/Right" to="." method="_on_right_pressed"]
+[connection signal="button_down" from="Control/Left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="Control/Left" to="." method="_on_left_button_up"]
+[connection signal="pressed" from="Control/Left" to="." method="_on_left_pressed"]
+[connection signal="button_down" from="Control/Zwei" to="." method="_on_zwei_button_down"]
+[connection signal="button_up" from="Control/Zwei" to="." method="_on_zwei_button_up"]
+[connection signal="pressed" from="Control/Zwei" to="." method="_on_zwei_pressed"]
+[connection signal="button_down" from="Control/Eins" to="." method="_on_eins_button_down"]
+[connection signal="button_up" from="Control/Eins" to="." method="_on_eins_button_up"]
+[connection signal="pressed" from="Control/Eins" to="." method="_on_eins_pressed"]
+[connection signal="pressed" from="Control/Walen" to="." method="_on_walen_pressed"]

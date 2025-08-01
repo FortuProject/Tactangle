@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://cud14awg2r684"]
+
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="1_5vwli"]
+[ext_resource type="Script" path="res://scripts/Pre_Post_Game/character_select.gd" id="1_lqjsm"]
+[ext_resource type="Texture2D" uid="uid://b4gpf1r5aq2jc" path="res://assets/backgrounds/CharacterSelect.png" id="1_ryvqq"]
+[ext_resource type="Texture2D" uid="uid://cihvkirmbg02h" path="res://assets/backgrounds/Character_Select_2.png" id="4_u3jlx"]
+[ext_resource type="Texture2D" uid="uid://b7j8c3hgd2bqq" path="res://assets/player/Portrait.png" id="5_3ar4h"]
+[ext_resource type="PackedScene" uid="uid://fm1u0sm6o7tm" path="res://scenes/Pre_Post_Game/character.tscn" id="6_3j2iy"]
+[ext_resource type="AudioStream" uid="uid://dnb62rybanf08" path="res://assets/audio/LukHash - SIDstorm.mp3" id="6_er1k5"]
+[ext_resource type="Texture2D" uid="uid://do45nnhswlnfc" path="res://assets/UI/pointer.png" id="8_414uq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lqjsm")
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_top = 3.0
+offset_right = 801.0
+offset_bottom = 78.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_5vwli")
+theme_override_font_sizes/font_size = 40
+text = "Character Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background_CharacterSelect" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(400.5, 288)
+scale = Vector2(0.782227, 0.5625)
+texture = ExtResource("1_ryvqq")
+
+[node name="RightCharacter" type="Sprite2D" parent="."]
+position = Vector2(675, 240)
+scale = Vector2(0.93, 0.93)
+texture = ExtResource("4_u3jlx")
+
+[node name="LeftCharacter" type="Sprite2D" parent="."]
+position = Vector2(116, 248)
+scale = Vector2(0.934444, 0.934444)
+texture = ExtResource("4_u3jlx")
+flip_h = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(111, 227)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_3ar4h")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(681, 219)
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("5_3ar4h")
+flip_h = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_er1k5")
+volume_db = -15.0
+autoplay = true
+
+[node name="Character" parent="." instance=ExtResource("6_3j2iy")]
+position = Vector2(394, 173)
+
+[node name="Character2" parent="." instance=ExtResource("6_3j2iy")]
+position = Vector2(394, 303)
+
+[node name="Character3" parent="." instance=ExtResource("6_3j2iy")]
+position = Vector2(112, 465)
+
+[node name="Character4" parent="." instance=ExtResource("6_3j2iy")]
+position = Vector2(254, 465)
+
+[node name="Character5" parent="." instance=ExtResource("6_3j2iy")]
+position = Vector2(392, 465)
+
+[node name="Character6" parent="." instance=ExtResource("6_3j2iy")]
+position = Vector2(536, 465)
+
+[node name="Character7" parent="." instance=ExtResource("6_3j2iy")]
+position = Vector2(678, 465)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(455, 115)
+scale = Vector2(3, 5)
+texture = ExtResource("8_414uq")

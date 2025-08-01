@@ -1,0 +1,795 @@
+[gd_scene load_steps=26 format=3 uid="uid://dx5m6vysbygky"]
+
+[ext_resource type="Script" path="res://scripts/YOMI_Grapple.gd" id="1_nr338"]
+[ext_resource type="Texture2D" uid="uid://dxne8koyo8tu4" path="res://assets/UI/Board/5x5BoardBackground1.png" id="2_eagwk"]
+[ext_resource type="Texture2D" uid="uid://ckac0rurnus2w" path="res://assets/UI/Board/Mat5x5_2.png" id="3_jxads"]
+[ext_resource type="Texture2D" uid="uid://b3565j736bupb" path="res://assets/UI/HP_YOMI_Grapple.png" id="3_qyyte"]
+[ext_resource type="Texture2D" uid="uid://ck8467lpaxmhr" path="res://assets/UI/Board/5x5_mat6.png" id="4_285um"]
+[ext_resource type="Texture2D" uid="uid://b1b40lksvucb6" path="res://assets/UI/Stamina_YOMI_Grapple.png" id="4_w50f5"]
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="5_xm04y"]
+[ext_resource type="Texture2D" uid="uid://ohrmeyprf2tq" path="res://assets/player/Grips_White_Gi.png" id="7_mldhm"]
+[ext_resource type="Texture2D" uid="uid://d1gdnooa4wbh" path="res://assets/player/Grips_White_Gi_Pants.png" id="8_3fylt"]
+[ext_resource type="Texture2D" uid="uid://bp4tmb5igdct" path="res://assets/player/KungFuMan_red_gi.png" id="10_tx6mv"]
+[ext_resource type="Texture2D" uid="uid://qmp6wqhv3h4o" path="res://assets/player/Grips_Blue_Gi.png" id="10_v70ag"]
+[ext_resource type="Texture2D" uid="uid://saq7bejnuy3y" path="res://assets/player/KungFuMan_blue_gi.png" id="11_au2pd"]
+[ext_resource type="Texture2D" uid="uid://dglm1r0fr8sbg" path="res://assets/UI/FullPosture_animation.png" id="11_c8oyj"]
+[ext_resource type="Texture2D" uid="uid://da64mj36a2732" path="res://assets/UI/FullHP_animation.png" id="12_a8kqc"]
+[ext_resource type="Texture2D" uid="uid://bwesdfnnh6ray" path="res://assets/player/Grips_Blue_Gi_Pants.png" id="12_f6pp0"]
+[ext_resource type="Texture2D" uid="uid://s1451msh7uc8" path="res://assets/UI/PlayerOptions.png" id="14_6gjff"]
+[ext_resource type="Texture2D" uid="uid://cyaqyfwgrtyb4" path="res://assets/UI/Board/Floor_2.png" id="14_aecru"]
+[ext_resource type="Texture2D" uid="uid://dl4yh33valy2j" path="res://assets/UI/Board/Settings.png" id="17_1r8jq"]
+[ext_resource type="Texture2D" uid="uid://c7id5y7akpmo4" path="res://assets/UI/SwitchPlayerButton.png" id="17_aiwst"]
+[ext_resource type="Texture2D" uid="uid://drpf6qqvt6dxt" path="res://assets/Sprite_Cards.png" id="19_fvttc"]
+[ext_resource type="Texture2D" uid="uid://d0jby2k1giaf8" path="res://assets/Numbers.png" id="19_qxani"]
+[ext_resource type="Texture2D" uid="uid://dlg8gpe3pviek" path="res://assets/Roshi_front_back4.png" id="20_c1bsp"]
+[ext_resource type="Texture2D" uid="uid://dk5erju2u5o0y" path="res://assets/UI/AllCards.png" id="50_d5wp2"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_r0py5"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_g3uq0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nr338")
+
+[node name="Board" type="Node" parent="."]
+
+[node name="Board_Background" type="Sprite2D" parent="Board"]
+position = Vector2(481.6, 724.4)
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("2_eagwk")
+
+[node name="1_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(347.4, 589.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(414.6, 589.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(480.6, 589.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(548.6, 589.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(616.6, 589.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(347.4, 657.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(414.6, 657.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(480.6, 657.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(548.6, 657.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(616.6, 657.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(347.4, 724.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(414.6, 724.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(480.6, 724.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(548.6, 724.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(616.6, 724.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(347.4, 792.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(414.6, 792.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(480.6, 792.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(548.6, 792.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(616.6, 792.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(347.4, 858.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(414.6, 858.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(480.6, 858.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(548.6, 858.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(616.6, 858.4)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="Board_Lines" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(481.6, 724.4)
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("4_285um")
+flip_h = true
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 899.0
+offset_bottom = 1994.0
+texture = SubResource("Texture2DRD_r0py5")
+expand_mode = 1
+
+[node name="TurnCounter" type="Label" parent="."]
+offset_left = 601.0
+offset_top = 246.0
+offset_right = 929.0
+offset_bottom = 315.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Turn Counter: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNode" type="Node" parent="."]
+
+[node name="PlayerStamina_Whiteout" type="TextureRect" parent="PlayerNode"]
+offset_left = 37.0
+offset_top = 80.0
+offset_right = 439.0
+offset_bottom = 140.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="PlayerStamina" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(240, 111)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qyyte")
+hframes = 9
+vframes = 8
+
+[node name="PlayerPosture_Whiteout2" type="TextureRect" parent="PlayerNode"]
+offset_left = 37.0
+offset_top = 178.0
+offset_right = 439.0
+offset_bottom = 238.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="PlayerPosture" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(240, 208)
+scale = Vector2(3, 3)
+texture = ExtResource("4_w50f5")
+hframes = 9
+vframes = 8
+
+[node name="Grips_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(214, 421)
+scale = Vector2(4, 3)
+texture = ExtResource("7_mldhm")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(216, 575)
+scale = Vector2(2, 3)
+texture = ExtResource("8_3fylt")
+hframes = 3
+vframes = 3
+
+[node name="YOMI_Grapple_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(273, 1071)
+scale = Vector2(2.571, 3)
+texture = ExtResource("10_tx6mv")
+hframes = 12
+vframes = 11
+
+[node name="StaminaFull" type="Sprite2D" parent="PlayerNode"]
+visible = false
+texture_filter = 1
+position = Vector2(239.5, 110)
+scale = Vector2(3.00781, 3.125)
+texture = ExtResource("11_c8oyj")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="PostureFull" type="Sprite2D" parent="PlayerNode"]
+visible = false
+texture_filter = 1
+position = Vector2(240, 208)
+scale = Vector2(3, 3.125)
+texture = ExtResource("12_a8kqc")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="EnemyNode" type="Node" parent="."]
+
+[node name="EnemyStamina_Whiteout" type="TextureRect" parent="EnemyNode"]
+offset_left = 467.0
+offset_top = 80.0
+offset_right = 869.0
+offset_bottom = 140.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="EnemyStamina" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670, 110)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qyyte")
+flip_h = true
+hframes = 9
+vframes = 8
+
+[node name="EnemyPosture_Whiteout2" type="TextureRect" parent="EnemyNode"]
+offset_left = 469.0
+offset_top = 178.0
+offset_right = 871.0
+offset_bottom = 238.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="EnemyPosture" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670, 208)
+scale = Vector2(3, 3)
+texture = ExtResource("4_w50f5")
+flip_h = true
+hframes = 9
+vframes = 8
+
+[node name="YOMI_Grapple_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(620, 1076)
+scale = Vector2(2.647, 3)
+texture = ExtResource("11_au2pd")
+flip_h = true
+hframes = 12
+vframes = 11
+
+[node name="Grips_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(733, 411)
+scale = Vector2(4, 3)
+texture = ExtResource("10_v70ag")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(735, 565)
+scale = Vector2(2, 3)
+texture = ExtResource("12_f6pp0")
+hframes = 3
+vframes = 3
+
+[node name="StaminaFull" type="Sprite2D" parent="EnemyNode"]
+visible = false
+texture_filter = 1
+position = Vector2(670.5, 108)
+scale = Vector2(3.00781, 3.125)
+texture = ExtResource("11_c8oyj")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="PostureFull" type="Sprite2D" parent="EnemyNode"]
+visible = false
+texture_filter = 1
+position = Vector2(670.5, 206)
+scale = Vector2(3, 3.125)
+texture = ExtResource("12_a8kqc")
+hframes = 3
+vframes = 2
+frame = 5
+
+[node name="PostureLabel" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 138.0
+offset_right = 527.0
+offset_bottom = 179.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Posture"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaLabel" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 36.0
+offset_right = 519.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Stamina"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ground" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(541, 1283)
+scale = Vector2(10.6251, 10.6251)
+texture = ExtResource("14_aecru")
+vframes = 4
+frame = 3
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 17.0
+offset_right = 153.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyName" type="Label" parent="."]
+offset_left = 745.0
+offset_top = 17.0
+offset_right = 873.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Player2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SwitchPlayer_Box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(472, 311)
+scale = Vector2(4.1875, 3.35946)
+texture = ExtResource("17_aiwst")
+hframes = 2
+
+[node name="SwitchPlayer_Button" type="Button" parent="."]
+offset_left = 312.0
+offset_top = 249.0
+offset_right = 645.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Switch player 
+Selector"
+flat = true
+
+[node name="Settings_Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 39.0
+offset_top = 277.0
+offset_right = 133.0
+offset_bottom = 368.0
+icon = ExtResource("17_1r8jq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_g3uq0")
+
+[node name="Now Fighting" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+texture_filter = 1
+position = Vector2(474, 1460)
+scale = Vector2(2.01379, 2.17108)
+texture = ExtResource("20_c1bsp")
+
+[node name="Cards_Player" type="Node" parent="."]
+
+[node name="Card1_Number" type="Sprite2D" parent="Cards_Player"]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(74, 1760)
+scale = Vector2(5, 5)
+texture = ExtResource("19_qxani")
+hframes = 3
+vframes = 3
+
+[node name="Card1_Button" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = -8.0
+offset_top = 1638.0
+offset_right = 168.0
+offset_bottom = 1867.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Card1_Box" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(81.4, 1751)
+scale = Vector2(9.54, 9.54)
+texture = ExtResource("19_fvttc")
+hframes = 4
+vframes = 4
+frame = 5
+
+[node name="Card1_Number2" type="Sprite2D" parent="Cards_Player"]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(226.6, 1760)
+scale = Vector2(5, 5)
+texture = ExtResource("19_qxani")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="Card1_Button2" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = 141.6
+offset_top = 1638.0
+offset_right = 319.6
+offset_bottom = 1867.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Card1_Box2" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(234.4, 1754.25)
+scale = Vector2(9.54, 9.54)
+texture = ExtResource("19_fvttc")
+hframes = 4
+vframes = 4
+frame = 6
+
+[node name="Card1_Number3" type="Sprite2D" parent="Cards_Player"]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(382, 1760)
+scale = Vector2(5, 5)
+texture = ExtResource("19_qxani")
+hframes = 3
+vframes = 3
+frame = 2
+
+[node name="Card1_Button3" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = 291.0
+offset_top = 1638.0
+offset_right = 476.0
+offset_bottom = 1867.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Card1_Box3" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(388.8, 1754.25)
+scale = Vector2(9.54, 9.54)
+texture = ExtResource("19_fvttc")
+hframes = 4
+vframes = 4
+frame = 7
+
+[node name="Card1_Number4" type="Sprite2D" parent="Cards_Player"]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(518.2, 1760)
+scale = Vector2(5, 5)
+texture = ExtResource("19_qxani")
+hframes = 3
+vframes = 3
+frame = 3
+
+[node name="Card1_Button4" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = 438.2
+offset_top = 1642.0
+offset_right = 619.2
+offset_bottom = 1871.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Card1_Box4" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(531.4, 1758.25)
+scale = Vector2(9.54, 9.54)
+texture = ExtResource("19_fvttc")
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="Card1_Number5" type="Sprite2D" parent="Cards_Player"]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(667, 1760)
+scale = Vector2(5, 5)
+texture = ExtResource("19_qxani")
+hframes = 3
+vframes = 3
+frame = 4
+
+[node name="Card1_Button5" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = 586.0
+offset_top = 1642.0
+offset_right = 775.0
+offset_bottom = 1871.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Card1_Box5" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(684.2, 1758.25)
+scale = Vector2(9.54, 9.54)
+texture = ExtResource("19_fvttc")
+hframes = 4
+vframes = 4
+frame = 9
+
+[node name="Card1_Number6" type="Sprite2D" parent="Cards_Player"]
+visible = false
+z_index = 1
+texture_filter = 1
+position = Vector2(811.4, 1760)
+scale = Vector2(5, 5)
+texture = ExtResource("19_qxani")
+hframes = 3
+vframes = 3
+frame = 5
+
+[node name="Card1_Button6" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = 727.4
+offset_top = 1642.0
+offset_right = 910.4
+offset_bottom = 1871.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Card1_Box6" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(818.4, 1758.25)
+scale = Vector2(9.54, 9.54)
+texture = ExtResource("19_fvttc")
+hframes = 4
+vframes = 4
+frame = 5
+
+[node name="Discard_Box" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(779, 1567)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+frame = 3
+
+[node name="Discard_Button" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = 676.0
+offset_top = 1515.0
+offset_right = 882.0
+offset_bottom = 1619.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Discard"
+flat = true
+
+[node name="Play_Box" type="Sprite2D" parent="Cards_Player"]
+visible = false
+texture_filter = 1
+position = Vector2(116, 1567)
+scale = Vector2(3.125, 3.125)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+frame = 2
+
+[node name="Play_Button" type="Button" parent="Cards_Player"]
+visible = false
+offset_left = 13.0
+offset_top = 1515.0
+offset_right = 219.0
+offset_bottom = 1619.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Play Cards"
+flat = true
+
+[node name="DeckDiscard" type="Node" parent="."]
+
+[node name="Card1_Button" type="Button" parent="DeckDiscard"]
+offset_left = 745.0
+offset_top = 720.0
+offset_right = 859.0
+offset_bottom = 899.0
+
+[node name="Card1_Box" type="Sprite2D" parent="DeckDiscard"]
+texture_filter = 1
+position = Vector2(802, 791.5)
+scale = Vector2(5, 5)
+texture = ExtResource("50_d5wp2")
+hframes = 8
+frame = 7
+
+[node name="Card1_Button2" type="Button" parent="DeckDiscard"]
+offset_left = 20.0
+offset_top = 725.0
+offset_right = 181.0
+offset_bottom = 904.0
+
+[node name="Card1_Box2" type="Sprite2D" parent="DeckDiscard"]
+texture_filter = 1
+position = Vector2(95, 789.5)
+scale = Vector2(5, 5)
+texture = ExtResource("50_d5wp2")
+hframes = 8
+frame = 7
+
+[node name="Discard" type="Label" parent="DeckDiscard"]
+offset_left = 20.0
+offset_top = 846.5
+offset_right = 190.0
+offset_bottom = 901.5
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Discarded"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Deck" type="Label" parent="DeckDiscard"]
+offset_left = 751.0
+offset_top = 839.5
+offset_right = 864.0
+offset_bottom = 903.5
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Deck"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="SwitchPlayer_Button" to="." method="_on_switch_player_button_pressed"]
+[connection signal="pressed" from="Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Cards_Player/Card1_Button" to="." method="_on_card_1_button_pressed"]
+[connection signal="pressed" from="Cards_Player/Card1_Button2" to="." method="_on_card_1_button_2_pressed"]
+[connection signal="pressed" from="Cards_Player/Card1_Button3" to="." method="_on_card_1_button_3_pressed"]
+[connection signal="pressed" from="Cards_Player/Card1_Button4" to="." method="_on_card_1_button_4_pressed"]
+[connection signal="pressed" from="Cards_Player/Card1_Button5" to="." method="_on_card_1_button_5_pressed"]
+[connection signal="pressed" from="Cards_Player/Card1_Button6" to="." method="_on_card_1_button_6_pressed"]

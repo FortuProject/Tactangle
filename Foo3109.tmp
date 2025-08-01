@@ -1,0 +1,389 @@
+[gd_scene load_steps=18 format=3 uid="uid://cx01wfgmyhqhy"]
+
+[ext_resource type="Script" path="res://scenes/footsies.gd" id="1_4bjrq"]
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="3_swk0r"]
+[ext_resource type="FontFile" uid="uid://bomhu4wdv3018" path="res://assets/fonts/Germanica.ttf" id="6_56sjb"]
+[ext_resource type="Texture2D" uid="uid://b1b40lksvucb6" path="res://assets/UI/Stamina_YOMI_Grapple.png" id="9_thj7p"]
+[ext_resource type="Texture2D" uid="uid://ch4renmu2qopc" path="res://assets/UI/Super_YOMI_Grapple.png" id="10_eab7v"]
+[ext_resource type="Texture2D" uid="uid://ohrmeyprf2tq" path="res://assets/player/Grips_White_Gi.png" id="10_q7ix6"]
+[ext_resource type="Texture2D" uid="uid://d1gdnooa4wbh" path="res://assets/player/Grips_White_Gi_Pants.png" id="11_0eoip"]
+[ext_resource type="Texture2D" uid="uid://bp4tmb5igdct" path="res://assets/player/KungFuMan_red_gi.png" id="12_gj74b"]
+[ext_resource type="Texture2D" uid="uid://saq7bejnuy3y" path="res://assets/player/KungFuMan_blue_gi.png" id="15_fwnwj"]
+[ext_resource type="Texture2D" uid="uid://qmp6wqhv3h4o" path="res://assets/player/Grips_Blue_Gi.png" id="16_qjh34"]
+[ext_resource type="Texture2D" uid="uid://bwesdfnnh6ray" path="res://assets/player/Grips_Blue_Gi_Pants.png" id="17_i7tdn"]
+[ext_resource type="Texture2D" uid="uid://cyaqyfwgrtyb4" path="res://assets/UI/Board/Floor_2.png" id="18_me04g"]
+[ext_resource type="Texture2D" uid="uid://c7id5y7akpmo4" path="res://assets/UI/SwitchPlayerButton.png" id="19_8o7n3"]
+[ext_resource type="Texture2D" uid="uid://cdwus3bvpkdxo" path="res://assets/UI/Pieces.png" id="20_ljn7f"]
+[ext_resource type="Texture2D" uid="uid://bavp2nho30bh" path="res://assets/UI/GBA.png" id="21_h5dbr"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_r0py5"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_g3uq0"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_4bjrq")
+metadata/_edit_horizontal_guides_ = [203.0]
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_top = -1.0
+offset_right = 900.0
+offset_bottom = 2041.0
+texture = SubResource("Texture2DRD_r0py5")
+expand_mode = 1
+
+[node name="PlayerNode" type="Node" parent="."]
+
+[node name="Grips_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(229, 421)
+scale = Vector2(6, 4.5)
+texture = ExtResource("10_q7ix6")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(234, 655)
+scale = Vector2(3, 4.5)
+texture = ExtResource("11_0eoip")
+hframes = 3
+vframes = 3
+
+[node name="YOMI_Grapple_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(269, 1249.5)
+scale = Vector2(4, 4.667)
+texture = ExtResource("12_gj74b")
+hframes = 12
+vframes = 11
+
+[node name="MeterBox" type="Sprite2D" parent="PlayerNode"]
+position = Vector2(206, 1661)
+scale = Vector2(2.691, 1.719)
+texture = ExtResource("9_thj7p")
+hframes = 9
+vframes = 8
+
+[node name="MeterLabel" type="Label" parent="PlayerNode"]
+offset_left = 37.0
+offset_top = 1687.0
+offset_right = 195.0
+offset_bottom = 1800.0
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("6_56sjb")
+theme_override_font_sizes/font_size = 120
+text = "0
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyNode" type="Node" parent="."]
+
+[node name="YOMI_Grapple_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(617, 1249.5)
+scale = Vector2(4, 4.533)
+texture = ExtResource("15_fwnwj")
+flip_h = true
+hframes = 12
+vframes = 11
+
+[node name="Grips_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(677, 411)
+scale = Vector2(6, 4.5)
+texture = ExtResource("16_qjh34")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(684, 644)
+scale = Vector2(3, 4.5)
+texture = ExtResource("17_i7tdn")
+hframes = 3
+vframes = 3
+
+[node name="MeterBox" type="Sprite2D" parent="EnemyNode"]
+position = Vector2(702, 1786)
+scale = Vector2(2.69141, 1.71875)
+texture = ExtResource("10_eab7v")
+hframes = 9
+vframes = 8
+
+[node name="MeterLabel" type="Label" parent="EnemyNode"]
+offset_left = 739.0
+offset_top = 1646.0
+offset_right = 897.0
+offset_bottom = 1766.0
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 19
+theme_override_fonts/font = ExtResource("6_56sjb")
+theme_override_font_sizes/font_size = 120
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ground" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(540, 1542.5)
+scale = Vector2(10.6251, 10.6251)
+texture = ExtResource("18_me04g")
+vframes = 4
+frame = 3
+
+[node name="PlayerName_box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(96, 38.6243)
+scale = Vector2(2.5, 1.58598)
+texture = ExtResource("19_8o7n3")
+hframes = 2
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 17.0
+offset_right = 153.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("3_swk0r")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerName_box2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(808, 37)
+scale = Vector2(2.5, 1.58598)
+texture = ExtResource("19_8o7n3")
+hframes = 2
+frame = 1
+
+[node name="EnemyName" type="Label" parent="."]
+offset_left = 745.0
+offset_top = 17.0
+offset_right = 873.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("3_swk0r")
+theme_override_font_sizes/font_size = 30
+text = "Player2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_g3uq0")
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1.4
+offset_top = 0.999992
+offset_right = 178.6
+offset_bottom = 399.0
+scale = Vector2(5, 5)
+metadata/_edit_use_anchors_ = true
+
+[node name="Controls" type="Sprite2D" parent="Control"]
+texture_filter = 1
+position = Vector2(90.68, 351.8)
+scale = Vector2(1.18275, 0.9805)
+texture = ExtResource("21_h5dbr")
+hframes = 3
+vframes = 3
+
+[node name="Up" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0722222
+anchor_top = 0.0226131
+anchor_right = 0.127778
+anchor_bottom = 0.0477387
+offset_left = 16.0
+offset_top = 320.0
+offset_right = 34.0
+offset_bottom = 337.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Down" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0666667
+anchor_top = 0.0678392
+anchor_right = 0.116667
+anchor_bottom = 0.0929648
+offset_left = 17.0
+offset_top = 346.0
+offset_right = 35.0
+offset_bottom = 363.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Right" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123778
+anchor_top = 0.0452261
+anchor_right = 0.162667
+anchor_bottom = 0.0653266
+offset_left = 34.0
+offset_top = 334.0
+offset_right = 52.0
+offset_bottom = 351.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Left" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0193333
+anchor_top = 0.0477387
+anchor_right = 0.0526666
+anchor_bottom = 0.0653266
+offset_left = 1.0
+offset_top = 333.0
+offset_right = 19.0
+offset_bottom = 350.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Zwei" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00555556
+anchor_top = 0.00753769
+anchor_bottom = 0.0150754
+offset_left = 96.0
+offset_top = 354.0
+offset_right = 118.0
+offset_bottom = 375.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Eins" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0217778
+anchor_top = -0.00251264
+anchor_right = 0.0115556
+anchor_bottom = 0.0276381
+offset_left = 124.0
+offset_top = 333.0
+offset_right = 146.0
+offset_bottom = 354.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Walen" type="Button" parent="Control"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00555556
+anchor_top = 0.00753769
+anchor_right = 0.0222222
+anchor_bottom = 0.0150754
+offset_left = 63.0
+offset_top = 321.0
+offset_right = 94.0
+offset_bottom = 334.0
+scale = Vector2(1, 0.829)
+metadata/_edit_use_anchors_ = true
+
+[node name="Pieces" type="Node" parent="."]
+
+[node name="Piece1_Sprite" type="Sprite2D" parent="Pieces"]
+texture_filter = 1
+position = Vector2(267, 190)
+scale = Vector2(9, 9)
+texture = ExtResource("20_ljn7f")
+hframes = 5
+vframes = 3
+
+[node name="Piece2_Sprite" type="Sprite2D" parent="Pieces"]
+texture_filter = 1
+position = Vector2(456, 190)
+scale = Vector2(9, 9)
+texture = ExtResource("20_ljn7f")
+hframes = 5
+vframes = 3
+frame = 5
+
+[node name="Piece3_Sprite" type="Sprite2D" parent="Pieces"]
+texture_filter = 1
+position = Vector2(639, 190)
+scale = Vector2(9, 9)
+texture = ExtResource("20_ljn7f")
+hframes = 5
+vframes = 3
+frame = 10
+
+[node name="Piece1_Label" type="Label" parent="Pieces"]
+offset_left = 206.0
+offset_top = 64.0
+offset_right = 329.0
+offset_bottom = 122.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_swk0r")
+theme_override_font_sizes/font_size = 30
+text = "gRIP"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Piece2_Label" type="Label" parent="Pieces"]
+offset_left = 392.0
+offset_top = 64.0
+offset_right = 515.0
+offset_bottom = 122.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_swk0r")
+theme_override_font_sizes/font_size = 30
+text = "kUZUSHI"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Piece3_Label" type="Label" parent="Pieces"]
+offset_left = 579.0
+offset_top = 64.0
+offset_right = 702.0
+offset_bottom = 122.0
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_swk0r")
+theme_override_font_sizes/font_size = 30
+text = "tHROW"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[connection signal="button_down" from="Control/Up" to="." method="_on_up_button_down"]
+[connection signal="button_up" from="Control/Up" to="." method="_on_up_button_up"]
+[connection signal="pressed" from="Control/Up" to="." method="_on_up_pressed"]
+[connection signal="button_down" from="Control/Down" to="." method="_on_down_button_down"]
+[connection signal="button_up" from="Control/Down" to="." method="_on_down_button_up"]
+[connection signal="pressed" from="Control/Down" to="." method="_on_down_pressed"]
+[connection signal="button_down" from="Control/Right" to="." method="_on_right_button_down"]
+[connection signal="button_up" from="Control/Right" to="." method="_on_right_button_up"]
+[connection signal="pressed" from="Control/Right" to="." method="_on_right_pressed"]
+[connection signal="button_down" from="Control/Left" to="." method="_on_left_button_down"]
+[connection signal="button_up" from="Control/Left" to="." method="_on_left_button_up"]
+[connection signal="pressed" from="Control/Left" to="." method="_on_left_pressed"]
+[connection signal="button_down" from="Control/Zwei" to="." method="_on_zwei_button_down"]
+[connection signal="button_up" from="Control/Zwei" to="." method="_on_zwei_button_up"]
+[connection signal="pressed" from="Control/Zwei" to="." method="_on_zwei_pressed"]
+[connection signal="button_down" from="Control/Eins" to="." method="_on_eins_button_down"]
+[connection signal="button_up" from="Control/Eins" to="." method="_on_eins_button_up"]
+[connection signal="pressed" from="Control/Eins" to="." method="_on_eins_pressed"]
+[connection signal="pressed" from="Control/Walen" to="." method="_on_walen_pressed"]

@@ -1,0 +1,1458 @@
+[gd_scene load_steps=51 format=3 uid="uid://dx5m6vysbygky"]
+
+[ext_resource type="Script" path="res://scripts/YOMI_Grapple.gd" id="1_nr338"]
+[ext_resource type="Texture2D" uid="uid://dxne8koyo8tu4" path="res://assets/UI/Board/5x5BoardBackground1.png" id="2_eagwk"]
+[ext_resource type="Texture2D" uid="uid://ckac0rurnus2w" path="res://assets/UI/Board/Mat5x5_2.png" id="3_jxads"]
+[ext_resource type="Texture2D" uid="uid://b3565j736bupb" path="res://assets/UI/HP_YOMI_Grapple.png" id="3_qyyte"]
+[ext_resource type="Texture2D" uid="uid://ck8467lpaxmhr" path="res://assets/UI/Board/5x5_mat6.png" id="4_285um"]
+[ext_resource type="Texture2D" uid="uid://b1b40lksvucb6" path="res://assets/UI/Stamina_YOMI_Grapple.png" id="4_w50f5"]
+[ext_resource type="FontFile" uid="uid://dp2lj3eo1djhj" path="res://assets/fonts/kenney_mini_square.ttf" id="5_xm04y"]
+[ext_resource type="Texture2D" uid="uid://ohrmeyprf2tq" path="res://assets/player/Grips_White_Gi.png" id="7_mldhm"]
+[ext_resource type="Texture2D" uid="uid://d1gdnooa4wbh" path="res://assets/player/Grips_White_Gi_Pants.png" id="8_3fylt"]
+[ext_resource type="Texture2D" uid="uid://bp4tmb5igdct" path="res://assets/player/KungFuMan_red_gi.png" id="10_tx6mv"]
+[ext_resource type="Texture2D" uid="uid://qmp6wqhv3h4o" path="res://assets/player/Grips_Blue_Gi.png" id="10_v70ag"]
+[ext_resource type="Texture2D" uid="uid://saq7bejnuy3y" path="res://assets/player/KungFuMan_blue_gi.png" id="11_au2pd"]
+[ext_resource type="Texture2D" uid="uid://dglm1r0fr8sbg" path="res://assets/UI/FullPosture_animation.png" id="11_c8oyj"]
+[ext_resource type="Texture2D" uid="uid://da64mj36a2732" path="res://assets/UI/FullHP_animation.png" id="12_a8kqc"]
+[ext_resource type="Texture2D" uid="uid://bwesdfnnh6ray" path="res://assets/player/Grips_Blue_Gi_Pants.png" id="12_f6pp0"]
+[ext_resource type="Texture2D" uid="uid://cpytiissjvvs0" path="res://assets/UI/Movement/YOMI_Movement.png" id="12_oifxp"]
+[ext_resource type="Texture2D" uid="uid://s1451msh7uc8" path="res://assets/UI/PlayerOptions.png" id="14_6gjff"]
+[ext_resource type="Texture2D" uid="uid://cyaqyfwgrtyb4" path="res://assets/UI/Board/Floor_2.png" id="14_aecru"]
+[ext_resource type="Texture2D" uid="uid://dl4yh33valy2j" path="res://assets/UI/Board/Settings.png" id="17_1r8jq"]
+[ext_resource type="Texture2D" uid="uid://c7id5y7akpmo4" path="res://assets/UI/SwitchPlayerButton.png" id="17_aiwst"]
+[ext_resource type="Texture2D" uid="uid://bul11npwndum6" path="res://assets/UI/Movement/YOMI_Movement2.png" id="19_xfgub"]
+[ext_resource type="Texture2D" uid="uid://yg8jjf1oil8i" path="res://assets/UI/Movement/YOMI_Movement5.png" id="20_eai5g"]
+[ext_resource type="Texture2D" uid="uid://bhv7xlghv5xkl" path="res://assets/UI/Movement/YOMI_Movement6.png" id="21_ayvyi"]
+[ext_resource type="Texture2D" uid="uid://clvna3md7khes" path="res://assets/UI/Movement/YOMI_Movement3.png" id="21_hs83a"]
+[ext_resource type="Texture2D" uid="uid://bgiqqhn5pf3qv" path="res://assets/UI/Movement/YOMI_Movement4.png" id="22_v3fg0"]
+[ext_resource type="Texture2D" uid="uid://mmshibai6n3t" path="res://assets/UI/Movement/YOMI_Movement7.png" id="25_n0mtm"]
+[ext_resource type="Texture2D" uid="uid://d0baumy8o36n" path="res://assets/UI/Movement/YOMI_Movement8.png" id="26_36j43"]
+[ext_resource type="Texture2D" uid="uid://cjtisrapjvapn" path="res://assets/UI/Movement/No_Movement.png" id="26_t3v34"]
+[ext_resource type="Texture2D" uid="uid://dcovkfyrqvnmt" path="res://assets/UI/Movement/Underhook.png" id="27_hc2bp"]
+[ext_resource type="Texture2D" uid="uid://dvf3tkja0rxd3" path="res://assets/UI/Movement/Over_Under.png" id="28_h4sdt"]
+[ext_resource type="Texture2D" uid="uid://bx34rqg3q2vj1" path="res://assets/UI/Movement/DoubleUnder.png" id="29_auc0y"]
+[ext_resource type="Texture2D" uid="uid://q7tx8027smq0" path="res://assets/UI/Movement/Overhook.png" id="30_56erm"]
+[ext_resource type="Texture2D" uid="uid://b88t84juu1u5t" path="res://assets/UI/Movement/DoubleOver.png" id="31_wougg"]
+[ext_resource type="Texture2D" uid="uid://bm3fl6qslki64" path="res://assets/UI/Movement/Belt.png" id="32_8wuwm"]
+[ext_resource type="Texture2D" uid="uid://ty2yahxyt467" path="res://assets/UI/Movement/Sleeve.png" id="33_wyhs4"]
+[ext_resource type="Texture2D" uid="uid://dw85gaxj0bhq" path="res://assets/UI/Movement/Sleeve_Belt.png" id="34_8kfno"]
+[ext_resource type="Texture2D" uid="uid://wlk8ol70ltoq" path="res://assets/UI/Movement/Sleeve_Lapel.png" id="35_1gxgl"]
+[ext_resource type="Texture2D" uid="uid://cn7m7v8cc7pmd" path="res://assets/UI/Movement/Two_On_One.png" id="36_4xyt5"]
+[ext_resource type="Texture2D" uid="uid://fw7mg64shm6n" path="res://assets/UI/Movement/Double_Sleeve.png" id="37_2sd8i"]
+[ext_resource type="Texture2D" uid="uid://ctsvepv6yemoo" path="res://assets/UI/Movement/Lapel.png" id="38_d22d2"]
+[ext_resource type="Texture2D" uid="uid://bpkl765x4nwiw" path="res://assets/UI/Movement/Ankle.png" id="39_jam71"]
+[ext_resource type="Texture2D" uid="uid://dksfois5r6fuo" path="res://assets/UI/Movement/DoubleHip.png" id="40_uwh3h"]
+[ext_resource type="Texture2D" uid="uid://co0ykcb3kjcs4" path="res://assets/UI/Movement/DoubleLeg.png" id="41_g0xqt"]
+[ext_resource type="Texture2D" uid="uid://iqvamkd7lwif" path="res://assets/UI/Movement/KneeHip.png" id="42_5htwn"]
+[ext_resource type="Texture2D" uid="uid://bgqslchjyj26f" path="res://assets/UI/Movement/Thigh.png" id="43_jyuny"]
+[ext_resource type="Texture2D" uid="uid://c8ckwywhte68q" path="res://assets/UI/Movement/DoubleAnkle.png" id="44_o3gwn"]
+[ext_resource type="Texture2D" uid="uid://koxylq712mh1" path="res://assets/UI/Movement/Regrip.png" id="45_tled0"]
+[ext_resource type="Texture2D" uid="uid://cvv763vxoa5om" path="res://assets/UI/Movement/YOMI_Movement1.png" id="46_d36r0"]
+[ext_resource type="Texture2D" uid="uid://pdfucx5f7ld3" path="res://assets/UI/Movement/Hip.png" id="47_87ime"]
+
+[sub_resource type="Texture2DRD" id="Texture2DRD_r0py5"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_nr338")
+
+[node name="Board" type="Node" parent="."]
+
+[node name="Board_Background" type="Sprite2D" parent="Board"]
+position = Vector2(197, 192)
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("2_eagwk")
+
+[node name="1_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(62.8, 57)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(130, 57)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(196, 57)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(264, 57)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="1_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(332, 57)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(62.8, 125)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(130, 125)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(196, 125)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(264, 125)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="2_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(332, 125)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(62.8, 192)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(130, 192)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(196, 192)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(264, 192)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="3_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(332, 192)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(62.8, 260)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(130, 260)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(196, 260)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(264, 260)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="4_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(332, 260)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_1" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(62.8, 326)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_2" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(130, 326)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_3" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(196, 326)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_4" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(264, 326)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="5_5" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(332, 326)
+scale = Vector2(4.3, 4.3)
+texture = ExtResource("3_jxads")
+hframes = 3
+vframes = 3
+
+[node name="Board_Lines" type="Sprite2D" parent="Board"]
+texture_filter = 1
+position = Vector2(197, 192)
+scale = Vector2(4.2, 4.2)
+texture = ExtResource("4_285um")
+flip_h = true
+
+[node name="Background" type="TextureRect" parent="."]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+offset_left = -1.0
+offset_top = -6.0
+offset_right = 899.0
+offset_bottom = 1994.0
+texture = SubResource("Texture2DRD_r0py5")
+expand_mode = 1
+
+[node name="TurnCounter" type="Label" parent="."]
+offset_left = 442.0
+offset_top = 76.0
+offset_right = 770.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Turn Counter: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNode" type="Node" parent="."]
+
+[node name="PlayerStamina_Whiteout" type="TextureRect" parent="PlayerNode"]
+offset_left = 37.0
+offset_top = 404.0
+offset_right = 439.0
+offset_bottom = 464.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="PlayerStamina" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(240, 435)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qyyte")
+hframes = 9
+vframes = 8
+
+[node name="PlayerPosture_Whiteout2" type="TextureRect" parent="PlayerNode"]
+offset_left = 37.0
+offset_top = 502.0
+offset_right = 439.0
+offset_bottom = 562.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="PlayerPosture" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(240, 532)
+scale = Vector2(3, 3)
+texture = ExtResource("4_w50f5")
+hframes = 9
+vframes = 8
+
+[node name="Grips_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(250, 690)
+scale = Vector2(4, 3)
+texture = ExtResource("7_mldhm")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(252, 844)
+scale = Vector2(2, 3)
+texture = ExtResource("8_3fylt")
+hframes = 3
+vframes = 3
+
+[node name="YOMI_Grapple_Player" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(399, 1400)
+scale = Vector2(3, 3.5)
+texture = ExtResource("10_tx6mv")
+hframes = 16
+vframes = 15
+
+[node name="StaminaFull" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(239.5, 435)
+scale = Vector2(3.00781, 3.125)
+texture = ExtResource("11_c8oyj")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="PostureFull" type="Sprite2D" parent="PlayerNode"]
+texture_filter = 1
+position = Vector2(240, 533)
+scale = Vector2(3, 3.125)
+texture = ExtResource("12_a8kqc")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="EnemyNode" type="Node" parent="."]
+
+[node name="EnemyStamina_Whiteout" type="TextureRect" parent="EnemyNode"]
+offset_left = 467.0
+offset_top = 404.0
+offset_right = 869.0
+offset_bottom = 464.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="EnemyStamina" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670, 434)
+scale = Vector2(3, 3)
+texture = ExtResource("3_qyyte")
+flip_h = true
+hframes = 9
+vframes = 8
+
+[node name="EnemyPosture_Whiteout2" type="TextureRect" parent="EnemyNode"]
+offset_left = 469.0
+offset_top = 502.0
+offset_right = 871.0
+offset_bottom = 562.0
+texture = ExtResource("2_eagwk")
+expand_mode = 1
+
+[node name="EnemyPosture" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670, 532)
+scale = Vector2(3, 3)
+texture = ExtResource("4_w50f5")
+flip_h = true
+hframes = 9
+vframes = 8
+
+[node name="YOMI_Grapple_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(491, 1395)
+scale = Vector2(3, 3.5)
+texture = ExtResource("11_au2pd")
+flip_h = true
+hframes = 16
+vframes = 15
+
+[node name="Grips_Player2" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(700, 690)
+scale = Vector2(4, 3)
+texture = ExtResource("10_v70ag")
+hframes = 4
+vframes = 4
+
+[node name="Grips_Pants_Player" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(702, 844)
+scale = Vector2(2, 3)
+texture = ExtResource("12_f6pp0")
+hframes = 3
+vframes = 3
+
+[node name="StaminaFull" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670.5, 435)
+scale = Vector2(3.00781, 3.125)
+texture = ExtResource("11_c8oyj")
+hframes = 3
+vframes = 2
+frame = 4
+
+[node name="PostureFull" type="Sprite2D" parent="EnemyNode"]
+texture_filter = 1
+position = Vector2(670.5, 533)
+scale = Vector2(3, 3.125)
+texture = ExtResource("12_a8kqc")
+hframes = 3
+vframes = 2
+frame = 5
+
+[node name="PostureLabel" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 557.0
+offset_right = 527.0
+offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Posture"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaLabel" type="Label" parent="."]
+offset_left = 399.0
+offset_top = 466.0
+offset_right = 519.0
+offset_bottom = 507.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Stamina"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Ground" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(538.995, 1537)
+scale = Vector2(10.6251, 10.6251)
+texture = ExtResource("14_aecru")
+vframes = 4
+frame = 3
+
+[node name="PlayerName" type="Label" parent="."]
+offset_left = 33.0
+offset_top = 366.0
+offset_right = 153.0
+offset_bottom = 407.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnemyName" type="Label" parent="."]
+offset_left = 745.0
+offset_top = 366.0
+offset_right = 865.0
+offset_bottom = 407.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Player2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LowerHUD" type="Node" parent="."]
+
+[node name="Movement_Box" type="Sprite2D" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+position = Vector2(117, 1768)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+
+[node name="Movement_Button" type="Button" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+offset_left = 22.0
+offset_top = 1725.0
+offset_right = 212.0
+offset_bottom = 1812.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Movement"
+flat = true
+
+[node name="Grips_Box" type="Sprite2D" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+position = Vector2(336, 1768)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+
+[node name="Grips_Button" type="Button" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+offset_left = 242.0
+offset_top = 1725.0
+offset_right = 432.0
+offset_bottom = 1812.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Grips"
+flat = true
+
+[node name="Defense_Box" type="Sprite2D" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+position = Vector2(557, 1768)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+
+[node name="Defense_Button" type="Button" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+offset_left = 461.0
+offset_top = 1725.0
+offset_right = 651.0
+offset_bottom = 1812.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Defense"
+flat = true
+
+[node name="Throws_Box" type="Sprite2D" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+position = Vector2(777, 1768)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+
+[node name="Throws_Button" type="Button" parent="LowerHUD"]
+visible = false
+texture_filter = 1
+offset_left = 682.0
+offset_top = 1725.0
+offset_right = 872.0
+offset_bottom = 1812.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Throws"
+flat = true
+
+[node name="Confirm_Box" type="Sprite2D" parent="LowerHUD"]
+texture_filter = 1
+position = Vector2(470, 755)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+
+[node name="Confirm_Button" type="Button" parent="LowerHUD"]
+texture_filter = 1
+offset_left = 375.0
+offset_top = 711.0
+offset_right = 565.0
+offset_bottom = 798.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Confirm
+Player 1"
+flat = true
+
+[node name="Confirm_Box2" type="Sprite2D" parent="LowerHUD"]
+texture_filter = 1
+position = Vector2(470, 875)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+
+[node name="Confirm_Button2" type="Button" parent="LowerHUD"]
+texture_filter = 1
+offset_left = 375.0
+offset_top = 831.0
+offset_right = 565.0
+offset_bottom = 918.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Confirm
+Player 2"
+flat = true
+
+[node name="Back_Box" type="Sprite2D" parent="LowerHUD"]
+texture_filter = 1
+position = Vector2(470, 998)
+scale = Vector2(3.1875, 3.1875)
+texture = ExtResource("14_6gjff")
+hframes = 2
+vframes = 2
+
+[node name="Back_Button" type="Button" parent="LowerHUD"]
+texture_filter = 1
+offset_left = 375.0
+offset_top = 954.0
+offset_right = 565.0
+offset_bottom = 1041.0
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Back"
+flat = true
+
+[node name="SwitchPlayer_Box" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(622, 245)
+scale = Vector2(5.53125, 4.4375)
+texture = ExtResource("17_aiwst")
+hframes = 2
+
+[node name="SwitchPlayer_Button" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 187.0
+offset_right = 788.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("5_xm04y")
+theme_override_font_sizes/font_size = 30
+text = "Switch player"
+flat = true
+
+[node name="Settings_Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 774.0
+offset_top = 37.0
+offset_right = 868.0
+offset_bottom = 128.0
+icon = ExtResource("17_1r8jq")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Movement" type="Node" parent="."]
+
+[node name="MoveLeft" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 12.0
+offset_top = 1602.0
+offset_right = 106.0
+offset_bottom = 1696.0
+icon = ExtResource("12_oifxp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveUpLeft" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 118.0
+offset_top = 1699.0
+offset_right = 212.0
+offset_bottom = 1793.0
+rotation = -1.5708
+icon = ExtResource("20_eai5g")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveUp" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 332.0
+offset_top = 1602.0
+offset_right = 426.0
+offset_bottom = 1696.0
+rotation = 1.5708
+icon = ExtResource("12_oifxp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveUpRight" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 442.0
+offset_top = 1605.0
+offset_right = 536.0
+offset_bottom = 1699.0
+rotation = 1.5708
+icon = ExtResource("21_ayvyi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveRight" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 108.0
+offset_top = 1823.0
+offset_right = 202.0
+offset_bottom = 1917.0
+rotation = 3.14159
+icon = ExtResource("12_oifxp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveDownLeft" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 119.0
+offset_top = 1820.0
+offset_right = 213.0
+offset_bottom = 1914.0
+rotation = -1.5708
+icon = ExtResource("21_ayvyi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveDown" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 240.0
+offset_top = 1819.0
+offset_right = 334.0
+offset_bottom = 1913.0
+rotation = 4.71239
+icon = ExtResource("12_oifxp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveDownRight" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 447.0
+offset_top = 1729.0
+offset_right = 541.0
+offset_bottom = 1823.0
+rotation = 1.5708
+icon = ExtResource("20_eai5g")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveLeft2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 458.0
+offset_top = 1606.0
+offset_right = 552.0
+offset_bottom = 1700.0
+icon = ExtResource("19_xfgub")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveUp2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 769.0
+offset_top = 1608.0
+offset_right = 863.0
+offset_bottom = 1702.0
+rotation = 1.5708
+icon = ExtResource("19_xfgub")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveRight2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 559.0
+offset_top = 1823.0
+offset_right = 653.0
+offset_bottom = 1917.0
+rotation = 3.14159
+icon = ExtResource("19_xfgub")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveDown2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 686.0
+offset_top = 1814.0
+offset_right = 780.0
+offset_bottom = 1908.0
+rotation = 4.71239
+icon = ExtResource("19_xfgub")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_Up2_Right" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 880.0
+offset_top = 1602.0
+offset_right = 974.0
+offset_bottom = 1696.0
+rotation = 1.5708
+icon = ExtResource("21_hs83a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="MoveDown2_Left" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 570.0
+offset_top = 1819.0
+offset_right = 664.0
+offset_bottom = 1913.0
+rotation = 4.71239
+icon = ExtResource("21_hs83a")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_Up2_Left" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 568.0
+offset_top = 1701.0
+offset_right = 662.0
+offset_bottom = 1795.0
+rotation = -1.5708
+icon = ExtResource("22_v3fg0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_Down2_Right" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 883.0
+offset_top = 1725.0
+offset_right = 977.0
+offset_bottom = 1819.0
+rotation = 1.5708
+icon = ExtResource("22_v3fg0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_Up2_Left2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 42.0
+offset_top = 1952.0
+offset_right = 136.0
+offset_bottom = 2046.0
+rotation = -1.5708
+icon = ExtResource("25_n0mtm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_Down2_Right2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 283.0
+offset_top = 1860.0
+offset_right = 377.0
+offset_bottom = 1954.0
+rotation = 1.5708
+icon = ExtResource("25_n0mtm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_Up2_Right2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 434.0
+offset_top = 1860.0
+offset_right = 528.0
+offset_bottom = 1954.0
+rotation = 1.5708
+icon = ExtResource("26_36j43")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_Down2_Left2" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 516.0
+offset_top = 1954.0
+offset_right = 610.0
+offset_bottom = 2048.0
+rotation = -1.5708
+icon = ExtResource("26_36j43")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Move_No_Move" type="Button" parent="Movement"]
+visible = false
+texture_filter = 1
+offset_left = 701.0
+offset_top = 1954.0
+offset_right = 795.0
+offset_bottom = 2048.0
+rotation = -1.5708
+icon = ExtResource("26_t3v34")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grips" type="Node" parent="."]
+
+[node name="Grip_None" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 8.0
+offset_top = 1695.0
+offset_right = 102.0
+offset_bottom = 1789.0
+rotation = -1.5708
+icon = ExtResource("26_t3v34")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_Underhook" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 114.0
+offset_top = 1606.0
+offset_right = 208.0
+offset_bottom = 1700.0
+icon = ExtResource("27_hc2bp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_OverUnder" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 230.0
+offset_top = 1602.0
+offset_right = 324.0
+offset_bottom = 1696.0
+icon = ExtResource("28_h4sdt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_DoubleUnder" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 340.0
+offset_top = 1606.0
+offset_right = 434.0
+offset_bottom = 1700.0
+icon = ExtResource("29_auc0y")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_Overhook" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 457.0
+offset_top = 1606.0
+offset_right = 551.0
+offset_bottom = 1700.0
+icon = ExtResource("30_56erm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_DoubleOver" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 580.0
+offset_top = 1606.0
+offset_right = 674.0
+offset_bottom = 1700.0
+icon = ExtResource("31_wougg")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_Belt" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 699.0
+offset_top = 1606.0
+offset_right = 793.0
+offset_bottom = 1700.0
+icon = ExtResource("32_8wuwm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_Sleeve" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 12.0
+offset_top = 1725.0
+offset_right = 106.0
+offset_bottom = 1819.0
+icon = ExtResource("33_wyhs4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_SleveBelt" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 111.0
+offset_top = 1725.0
+offset_right = 205.0
+offset_bottom = 1819.0
+icon = ExtResource("34_8kfno")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_SleeveLapel" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 228.0
+offset_top = 1725.0
+offset_right = 322.0
+offset_bottom = 1819.0
+icon = ExtResource("35_1gxgl")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_TwoOnOne" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 336.0
+offset_top = 1725.0
+offset_right = 430.0
+offset_bottom = 1819.0
+icon = ExtResource("36_4xyt5")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_DoubleSleeve" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 453.0
+offset_top = 1725.0
+offset_right = 547.0
+offset_bottom = 1819.0
+icon = ExtResource("37_2sd8i")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_Lapel" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 572.0
+offset_top = 1725.0
+offset_right = 666.0
+offset_bottom = 1819.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_DoubleLapel" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 698.0
+offset_top = 1725.0
+offset_right = 792.0
+offset_bottom = 1819.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_DoubleAnkle" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 9.0
+offset_top = 1835.0
+offset_right = 103.0
+offset_bottom = 1929.0
+icon = ExtResource("39_jam71")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_DoubleHip" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 114.0
+offset_top = 1835.0
+offset_right = 208.0
+offset_bottom = 1929.0
+icon = ExtResource("40_uwh3h")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_DoubleLeg" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 226.0
+offset_top = 1835.0
+offset_right = 320.0
+offset_bottom = 1929.0
+icon = ExtResource("41_g0xqt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_KneeHip" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 335.0
+offset_top = 1835.0
+offset_right = 429.0
+offset_bottom = 1929.0
+icon = ExtResource("42_5htwn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_InnerThigh" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 447.0
+offset_top = 1835.0
+offset_right = 541.0
+offset_bottom = 1929.0
+icon = ExtResource("43_jyuny")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Grip_Ankle" type="Button" parent="Grips"]
+visible = false
+texture_filter = 1
+offset_left = 571.0
+offset_top = 1835.0
+offset_right = 665.0
+offset_bottom = 1929.0
+icon = ExtResource("44_o3gwn")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Defense" type="Node" parent="."]
+
+[node name="Break_LapelGrip" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 23.0
+offset_top = 1622.0
+offset_right = 117.0
+offset_bottom = 1716.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Break_SleeveGrip" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 143.0
+offset_top = 1622.0
+offset_right = 237.0
+offset_bottom = 1716.0
+icon = ExtResource("33_wyhs4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Break_AnkleGrip" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 266.0
+offset_top = 1622.0
+offset_right = 360.0
+offset_bottom = 1716.0
+icon = ExtResource("39_jam71")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Break_LegGrip" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 383.0
+offset_top = 1622.0
+offset_right = 477.0
+offset_bottom = 1716.0
+icon = ExtResource("41_g0xqt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Break_BeltGrip" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 503.0
+offset_top = 1622.0
+offset_right = 597.0
+offset_bottom = 1716.0
+icon = ExtResource("32_8wuwm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Break_Regrip" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 629.0
+offset_top = 1622.0
+offset_right = 723.0
+offset_bottom = 1716.0
+icon = ExtResource("45_tled0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Break_Block" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 755.0
+offset_top = 1622.0
+offset_right = 849.0
+offset_bottom = 1716.0
+icon = ExtResource("46_d36r0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Break_Nothing" type="Button" parent="Defense"]
+visible = false
+texture_filter = 1
+offset_left = 149.0
+offset_top = 1752.0
+offset_right = 243.0
+offset_bottom = 1846.0
+icon = ExtResource("26_t3v34")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throws" type="Node" parent="."]
+
+[node name="Throw_LegThrow" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 17.0
+offset_top = 1606.0
+offset_right = 111.0
+offset_bottom = 1700.0
+icon = ExtResource("39_jam71")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_HipThrow" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 157.0
+offset_top = 1606.0
+offset_right = 251.0
+offset_bottom = 1700.0
+icon = ExtResource("47_87ime")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_SingleLeg" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 284.0
+offset_top = 1606.0
+offset_right = 378.0
+offset_bottom = 1700.0
+icon = ExtResource("43_jyuny")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_DoubleLeg" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 399.0
+offset_top = 1606.0
+offset_right = 493.0
+offset_bottom = 1700.0
+icon = ExtResource("41_g0xqt")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_FootSweep" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 515.0
+offset_top = 1606.0
+offset_right = 609.0
+offset_bottom = 1700.0
+icon = ExtResource("39_jam71")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_Push" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 638.0
+offset_top = 1606.0
+offset_right = 732.0
+offset_bottom = 1700.0
+icon = ExtResource("32_8wuwm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_Snapdown" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 766.0
+offset_top = 1606.0
+offset_right = 860.0
+offset_bottom = 1700.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_Shoulder" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 18.0
+offset_top = 1740.0
+offset_right = 112.0
+offset_bottom = 1834.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_Fireman" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 156.0
+offset_top = 1740.0
+offset_right = 250.0
+offset_bottom = 1834.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_Bodylock" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 276.0
+offset_top = 1740.0
+offset_right = 370.0
+offset_bottom = 1834.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_AnklePick" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 398.0
+offset_top = 1740.0
+offset_right = 492.0
+offset_bottom = 1834.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_UnderhookToss" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 514.0
+offset_top = 1740.0
+offset_right = 608.0
+offset_bottom = 1834.0
+icon = ExtResource("38_d22d2")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Throw_None" type="Button" parent="Throws"]
+visible = false
+texture_filter = 1
+offset_left = 646.0
+offset_top = 1740.0
+offset_right = 740.0
+offset_bottom = 1834.0
+icon = ExtResource("26_t3v34")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="pressed" from="LowerHUD/Movement_Button" to="." method="_on_movement_button_pressed"]
+[connection signal="pressed" from="LowerHUD/Grips_Button" to="." method="_on_grips_button_pressed"]
+[connection signal="pressed" from="LowerHUD/Defense_Button" to="." method="_on_defense_button_pressed"]
+[connection signal="pressed" from="LowerHUD/Throws_Button" to="." method="_on_throws_button_pressed"]
+[connection signal="pressed" from="LowerHUD/Confirm_Button" to="." method="_on_confirm_button_pressed"]
+[connection signal="pressed" from="LowerHUD/Confirm_Button2" to="." method="_on_confirm_button_2_pressed"]
+[connection signal="pressed" from="LowerHUD/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="SwitchPlayer_Button" to="." method="_on_switch_player_button_pressed"]
+[connection signal="pressed" from="Movement/MoveLeft" to="." method="_on_move_left_pressed"]
+[connection signal="pressed" from="Movement/MoveUpLeft" to="." method="_on_move_up_left_pressed"]
+[connection signal="pressed" from="Movement/MoveUp" to="." method="_on_move_up_pressed"]
+[connection signal="pressed" from="Movement/MoveUpRight" to="." method="_on_move_up_right_pressed"]
+[connection signal="pressed" from="Movement/MoveRight" to="." method="_on_move_right_pressed"]
+[connection signal="pressed" from="Movement/MoveDownLeft" to="." method="_on_move_down_left_pressed"]
+[connection signal="pressed" from="Movement/MoveDown" to="." method="_on_move_down_pressed"]
+[connection signal="pressed" from="Movement/MoveDownRight" to="." method="_on_move_down_right_pressed"]
+[connection signal="pressed" from="Movement/MoveLeft2" to="." method="_on_move_left_2_pressed"]
+[connection signal="pressed" from="Movement/MoveUp2" to="." method="_on_move_up_2_pressed"]
+[connection signal="pressed" from="Movement/MoveRight2" to="." method="_on_move_right_2_pressed"]
+[connection signal="pressed" from="Movement/MoveDown2" to="." method="_on_move_down_2_pressed"]
+[connection signal="pressed" from="Movement/Move_Up2_Right" to="." method="_on_move_up_2_right_pressed"]
+[connection signal="pressed" from="Movement/MoveDown2_Left" to="." method="_on_move_down_2_left_pressed"]
+[connection signal="pressed" from="Movement/Move_Up2_Left" to="." method="_on_move_up_2_left_pressed"]
+[connection signal="pressed" from="Movement/Move_Down2_Right" to="." method="_on_move_down_2_right_pressed"]
+[connection signal="pressed" from="Movement/Move_Up2_Left2" to="." method="_on_move_up_2_left_2_pressed"]
+[connection signal="pressed" from="Movement/Move_Down2_Right2" to="." method="_on_move_down_2_right_2_pressed"]
+[connection signal="pressed" from="Movement/Move_Up2_Right2" to="." method="_on_move_up_2_right_2_pressed"]
+[connection signal="pressed" from="Movement/Move_Down2_Left2" to="." method="_on_move_down_2_left_2_pressed"]
+[connection signal="pressed" from="Movement/Move_No_Move" to="." method="_on_move_no_move_pressed"]
+[connection signal="pressed" from="Grips/Grip_None" to="." method="_on_grip_none_pressed"]
+[connection signal="pressed" from="Grips/Grip_Underhook" to="." method="_on_grip_underhook_pressed"]
+[connection signal="pressed" from="Grips/Grip_OverUnder" to="." method="_on_grip_over_under_pressed"]
+[connection signal="pressed" from="Grips/Grip_DoubleUnder" to="." method="_on_grip_double_under_pressed"]
+[connection signal="pressed" from="Grips/Grip_Overhook" to="." method="_on_grip_overhook_pressed"]
+[connection signal="pressed" from="Grips/Grip_DoubleOver" to="." method="_on_grip_double_over_pressed"]
+[connection signal="pressed" from="Grips/Grip_Belt" to="." method="_on_grip_belt_pressed"]
+[connection signal="pressed" from="Grips/Grip_Sleeve" to="." method="_on_grip_sleeve_pressed"]
+[connection signal="pressed" from="Grips/Grip_SleveBelt" to="." method="_on_grip_sleve_belt_pressed"]
+[connection signal="pressed" from="Grips/Grip_SleeveLapel" to="." method="_on_grip_sleeve_lapel_pressed"]
+[connection signal="pressed" from="Grips/Grip_TwoOnOne" to="." method="_on_grip_two_on_one_pressed"]
+[connection signal="pressed" from="Grips/Grip_DoubleSleeve" to="." method="_on_grip_double_sleeve_pressed"]
+[connection signal="pressed" from="Grips/Grip_Lapel" to="." method="_on_grip_lapel_pressed"]
+[connection signal="pressed" from="Grips/Grip_DoubleLapel" to="." method="_on_grip_double_lapel_pressed"]
+[connection signal="pressed" from="Grips/Grip_DoubleAnkle" to="." method="_on_grip_double_ankle_pressed"]
+[connection signal="pressed" from="Grips/Grip_DoubleHip" to="." method="_on_grip_double_hip_pressed"]
+[connection signal="pressed" from="Grips/Grip_DoubleLeg" to="." method="_on_grip_double_leg_pressed"]
+[connection signal="pressed" from="Grips/Grip_KneeHip" to="." method="_on_grip_knee_hip_pressed"]
+[connection signal="pressed" from="Grips/Grip_InnerThigh" to="." method="_on_grip_inner_thigh_pressed"]
+[connection signal="pressed" from="Grips/Grip_Ankle" to="." method="_on_grip_ankle_pressed"]
+[connection signal="pressed" from="Defense/Break_LapelGrip" to="." method="_on_break_lapel_grip_pressed"]
+[connection signal="pressed" from="Defense/Break_SleeveGrip" to="." method="_on_break_sleeve_grip_pressed"]
+[connection signal="pressed" from="Defense/Break_AnkleGrip" to="." method="_on_break_ankle_grip_pressed"]
+[connection signal="pressed" from="Defense/Break_LegGrip" to="." method="_on_break_leg_grip_pressed"]
+[connection signal="pressed" from="Defense/Break_BeltGrip" to="." method="_on_break_belt_grip_pressed"]
+[connection signal="pressed" from="Defense/Break_Regrip" to="." method="_on_break_regrip_pressed"]
+[connection signal="pressed" from="Defense/Break_Block" to="." method="_on_break_block_pressed"]
+[connection signal="pressed" from="Defense/Break_Nothing" to="." method="_on_break_nothing_pressed"]
+[connection signal="pressed" from="Throws/Throw_LegThrow" to="." method="_on_throw_leg_throw_pressed"]
+[connection signal="pressed" from="Throws/Throw_HipThrow" to="." method="_on_throw_hip_throw_pressed"]
+[connection signal="pressed" from="Throws/Throw_SingleLeg" to="." method="_on_throw_single_leg_pressed"]
+[connection signal="pressed" from="Throws/Throw_DoubleLeg" to="." method="_on_throw_double_leg_pressed"]
+[connection signal="pressed" from="Throws/Throw_FootSweep" to="." method="_on_throw_foot_sweep_pressed"]
+[connection signal="pressed" from="Throws/Throw_Push" to="." method="_on_throw_push_pressed"]
+[connection signal="pressed" from="Throws/Throw_Snapdown" to="." method="_on_throw_snapdown_pressed"]
+[connection signal="pressed" from="Throws/Throw_Shoulder" to="." method="_on_throw_shoulder_pressed"]
+[connection signal="pressed" from="Throws/Throw_Fireman" to="." method="_on_throw_fireman_pressed"]
+[connection signal="pressed" from="Throws/Throw_Bodylock" to="." method="_on_throw_bodylock_pressed"]
+[connection signal="pressed" from="Throws/Throw_AnklePick" to="." method="_on_throw_ankle_pick_pressed"]
+[connection signal="pressed" from="Throws/Throw_UnderhookToss" to="." method="_on_throw_underhook_toss_pressed"]
+[connection signal="pressed" from="Throws/Throw_None" to="." method="_on_throw_none_pressed"]
